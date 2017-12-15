@@ -9,6 +9,7 @@ Web site: <http://mathinfo.univ-lorraine.fr>
 Platform: Python 3  
 License: GNU GPL 3.0  
 
+Use of [tmdbsimple](https://github.com/celiao/tmdbsimple) v1.7.0, with a small modification for the reception of keywords of TV series, stored in src/lib
 
 Description:  
 Recommandation de série basée sur des mots clés obtenus par  l'analyse sémantique des synopsis des séries, saisons, et épisodes  
@@ -17,7 +18,7 @@ Recommandation de série basée sur des mots clés obtenus par  l'analyse séman
 Requis:  
   1) [Python 3.0](https://www.python.org/download/releases/3.0/)  
   2) [NLTK 3.2.5](http://www.nltk.org)  
-  3) [tmdbsimple API key](https://www.themoviedb.org/documentation/api) (à ajouter dans un fichier api.key à la racine)
+  3) [TMDB API key](https://www.themoviedb.org/documentation/api) (à ajouter dans un fichier api.key à la racine)
 
 
 Utilisation:  
