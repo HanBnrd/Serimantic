@@ -9,7 +9,8 @@ Web site: <http://mathinfo.univ-lorraine.fr>
 Platform: Python 3  
 License: GNU GPL 3.0  
 
-Use of [tmdbsimple](https://github.com/celiao/tmdbsimple) v1.7.0, with a small modification for the reception of keywords of TV series, stored in src/lib
+Use of [tmdbsimple](https://github.com/celiao/tmdbsimple) v1.7.0, modified to get keywords of TV series (stored in src/lib)
+
 
 Description:  
 Recommandation de série basée sur des mots clés obtenus par  l'analyse sémantique des synopsis des séries, saisons, et épisodes  
