@@ -1,7 +1,7 @@
 # Serimantic #
 
 Title: Serimantic  
-Keywords: recommendation, series, NLP  
+Keywords: NLP, recommendation, TV series  
 Version: 1.0  
 Date: dec 2017  
 Authors: Justinien Ghorra, Laurine Jeannot, Johann Benerradi, Rachel Confiant-Duté  
@@ -13,16 +13,19 @@ Use of [tmdbsimple](https://github.com/celiao/tmdbsimple) v1.7.0, modified to ge
 
 
 Description:  
-Recommandation de série basée sur des mots clés obtenus par  l'analyse sémantique des synopsis des séries, saisons, et épisodes  
+TV series recommendation based on keyword extraction through semantic analysis of overviews  
 
 
-Requis:  
+Requires:  
   - [Python 3.0](https://www.python.org/download/releases/3.0/)  
   - [NLTK 3.2.5](http://www.nltk.org)  
-  - [TMDB API key](https://www.themoviedb.org/documentation/api) (à ajouter dans un fichier api.key à la racine)
+  - [TMDB API key](https://www.themoviedb.org/documentation/api)  
 
 
 Utilisation:  
+  - Configuration de l'API key
+Lancer keyConfig.py avec Python3 et saisir la clé  
+
   - Extraction des mots clés des séries de base  
 Lancer defaultMain.py avec Python 3 (les mots clés sont enregistrés dans samples/saves/default.tal)  
 Pour extraire les mots clés avec une base de séries différente, modifier le fichier samples/tvlist.txt  
