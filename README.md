@@ -23,7 +23,7 @@ Requires:
 
 
 Utilisation:  
-  - Configuration de l'API key
+  - Configuration de l'API key  
 Lancer keyConfig.py avec Python3 et saisir la clé  
 
   - Extraction des mots clés des séries de base  
