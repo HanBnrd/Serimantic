@@ -8,7 +8,7 @@ import lib.filter as fil
 import lib.semantic as sem
 from lib.writer import writeDefaultFile
 
-def addInList(series):
+def addInList(series, verify=False):
     seriesWords = fil.filter(series['overview']) # from the raw series synopsis to the filtered one
     numberOfSeasons = tmdb.TV(series['id']).info()['number_of_seasons']
     numberOfEpisodes = 0
@@ -24,5 +24,8 @@ def addInList(series):
             episodeOverview = tmdb.TV_Episodes(series['id'],seasonNumber+1,episodeNumber+1).info()['overview']
             episodesWords.extend(fil.filter(episodeOverview)) # from the raw episodes synopsis to the filtered ones
 
-    keywords = sem.selectKeywords(seriesWords, seasonsWords, episodesWords)
+    if verify:
+        keywords = sem.selectVerifiedKeywords(seriesWords, seasonsWords, episodesWords)
+    else:
+        keywords = sem.selectKeywords(seriesWords, seasonsWords, episodesWords)
     writeDefaultFile(series['original_name'], keywords)

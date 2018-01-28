@@ -22,3 +22,5 @@ for line in fichier.readlines():
         s = search.results[0] # take the first result
         print(s['original_name'])
         addInList(s)
+
+fichier.close()
