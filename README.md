@@ -17,7 +17,7 @@ TV series recommendation based on keyword extraction through semantic analysis o
 
 
 Requires:  
-  - [Python 3.0](https://www.python.org/download/releases/3.0/)  
+  - [Python >3.0](https://www.python.org/download/releases/3.0/)  
   - [NLTK 3.2.5](http://www.nltk.org)  
   - [TMDB API key](https://www.themoviedb.org/documentation/api)  
 
@@ -36,7 +36,7 @@ Lancer addSerie.py avec Python 3 et suivre les intructions en console (les mots 
 Selon la version de Serimantic, le traitement pour certaines séries en plus de celles initiales peut avoir été réalisé dans le fichier samples/saves/default.tal  
 
   - Recommandation de série  
-Lancer recommendation.py avec Python3 et suivre les instruction en console  
+Lancer recommendation.py avec Python3 et suivre les instructions en console  
 Une série proche de celle indiquée sera recommandée et les mots clés en communs affichés  
 
 
