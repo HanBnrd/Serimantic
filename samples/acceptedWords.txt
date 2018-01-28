@@ -71,6 +71,7 @@ confrontation
 connection
 contact
 control
+control
 crack
 crew
 crime
@@ -108,6 +109,7 @@ doctor
 dome
 dorian
 dramatic
+dream
 drive
 drug
 earth
@@ -143,7 +145,7 @@ foreman
 forfeit
 fragment
 friend
-friendshdream
+friends
 future
 game
 gang
@@ -274,6 +276,7 @@ reading
 reappraisal
 recall
 record
+recover
 relationship
 remember
 rescue
@@ -371,4 +374,4 @@ woman
 work
 world
 young
-youngcontrolrecover
+young

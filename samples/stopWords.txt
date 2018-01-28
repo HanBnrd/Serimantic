@@ -3,6 +3,7 @@ about
 accept
 act
 activity
+adjust
 aid
 air
 airing
@@ -198,4 +199,4 @@ turn
 use
 way
 welcome
-wonderadjust
+wonder
