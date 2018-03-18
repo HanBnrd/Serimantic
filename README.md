@@ -31,8 +31,8 @@ Pour extraire les mots clés avec une base de séries différente, modifier le f
 Selon la version de Serimantic, ce traitement est déjà réalisé bien qu'il soit possible de le refaire en cas de problème  
 
 ##### Ajout d'une série au corpus  
-Lancer addSerie.py avec Python 3 et suivre les intructions en console (les mots clés sont enregistrés dans samples/saves/default.tal)  
-Selon la version de Serimantic, le traitement pour certaines séries en plus de celles initiales peut avoir été réalisé dans le fichier samples/saves/default.tal  
+Lancer addSerie.py avec Python 3 et suivre les intructions en console  
+Les mots clés sont enregistrés dans samples/saves/default.tal  
 
 ##### Recommandation de série  
 Lancer recommendation.py avec Python3 et suivre les instructions en console  
