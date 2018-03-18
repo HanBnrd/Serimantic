@@ -11,8 +11,7 @@ License: GNU GPL 3.0
 
 Use of [tmdbsimple](https://github.com/celiao/tmdbsimple) v1.7.0, modified to get keywords of TV series (stored in src/lib)
 
-
-##### Description
+Description:  
 TV series recommendation based on keyword extraction through semantic analysis of overviews  
 
 
