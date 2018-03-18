@@ -26,4 +26,6 @@ if (len(search.results) > 0):
         else:
             print("Ajout de la série, veuillez patienter...")
             addInList(s)
+            tvlist = open('../samples/tvlist.txt','a',encoding='utf8')
+            tvlist.write(TVShowName+"\n")
             print("Série ajoutée !")
