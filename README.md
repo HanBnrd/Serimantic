@@ -39,4 +39,4 @@ Lancer recommendation.py avec Python3 et suivre les instructions en console
 Une série proche de celle indiquée sera recommandée et les mots clés en communs affichés  
 
 
-(c) Université de Lorraine - Nancy
+*(c) Université de Lorraine - Nancy*
