@@ -23,7 +23,7 @@ Requires:
 
 ### Utilisation
 ##### Configuration de l'API key  
-Lancer keyConfig.py avec Python3 et saisir la clé  
+Lancer keyConfig.py avec Python3 et saisir la clé
 
 ##### Extraction des mots clés des séries de base  
 Lancer defaultMain.py avec Python 3 (les mots clés sont enregistrés dans samples/saves/default.tal)  
