@@ -2,7 +2,7 @@
 
 Title: Serimantic  
 Keywords: NLP, recommendation, TV series  
-Version: 1.0  
+Version: 1.0.0  
 Date: dec 2017  
 Authors: Justinien Ghorra, Laurine Jeannot, Johann Benerradi, Rachel Confiant-Duté  
 Web site: <http://mathinfo.univ-lorraine.fr>  
