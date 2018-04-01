@@ -1,0 +1,26 @@
+    <div class="container center grey lighten-4">
+      <div class="row valign-wrapper center-align">
+          <img class="col s3 materialboxed" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7buCWBTpiPrCF5Lt023dSC60rgS.jpg"/>
+
+        <div class="col s6">
+          <h1 id="seriestitle">Friends &nbsp;(1994)</h1>
+          <h6>The misadventures of a group of friends as they navigate the pitfalls of work, life and love in Manhattan.</h6>
+        </div>
+
+        <div class="col s3">
+          <h5>Genres</h5>
+          <ul>
+            <li>Comedy</li>
+          </ul>
+          <br>
+          <h5>Keywords</h5>
+          <table ng-controller="keywordsCtrl">
+            <tr ng-repeat="rowkey in keywords">
+              <td class="center" ng-repeat="key in rowkey">{{key}}</td>
+            </tr>
+          </table>
+        </div>
+
+
+
+    </div>

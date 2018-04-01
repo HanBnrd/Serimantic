@@ -13,10 +13,25 @@
 	font-size: inherit;
 }
 
-/* Sticky footer ---> pas opti */
+/* Checkboxes color */
+.switch label input[type=checkbox]:checked + .lever {
+  background-color: mediumseagreen;
+}
 
-#footer{
-	width: 100%;
-  	position: absolute;
-  	bottom: 0;
+.switch label input[type=checkbox]:checked + .lever:after {
+  background-color: darkgreen;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+#mainFooter {
+	flex: 1 0 auto;
+}
+@font-face {
+	font-family: 'Streamster';
+	src: url('../fonts/Streamster.ttf') format('truetype');
 }
