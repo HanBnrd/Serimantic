@@ -21,8 +21,8 @@
 
     <div class="nav-wrapper container">
       <ul class="left hide-on-med-and-down">
-        <li><a ui-sref="recommandations">Recommandations</a></li>
-        <li><a href="">Liste des s&eacute;ries</a></li>
+        <li><a ui-sref="recommandations" class="btn black waves-effect waves-light">Recommandations</a></li>
+        <li><a ui-sref="" class="btn black waves-effect waves-light">Liste des s&eacute;ries</a></li>
       </ul>
 
       <a id="logo-container" href="/" class="brand-logo center green-text text-lighten-2">Serimantic</a>
@@ -37,7 +37,7 @@
           </form>
         </li>
         
-        <li><a href="#"><i class="material-icons green-text text-lighten-2">account_circle</i></a></li>
+        <li><a href="#" class="btn black waves-effect waves-light"><i class="material-icons green-text text-lighten-2">account_circle</i></a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -48,13 +48,12 @@
     </div>
   </nav>
 
-  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  <!--                                                                            -->
-  <!--                              Main container                                -->
-  <!--                                                                            -->
-  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  <div class="section no-pad-bot" id="content" ui-view>
-    
+  <div ui-view class="section no-pad-bot" id="content">
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--                                                                            -->
+    <!--                              Main container                                -->
+    <!--                                                                            -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   </div>
 
   <footer class="page-footer green darken-4" id="footer">
@@ -86,7 +85,7 @@
       <div class="container">
         <ul>
           <li>Johann Benerradi, Quentin Pouvreau, Laurine ASMR, Justinien Ghorra</li>
-          <li>CSS Framework -- <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a></li>
+          <li>Copyright (c) 2014 <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a></li>
       </div>
     </div>
   </footer>
@@ -98,6 +97,8 @@
   <script src="js/init.js"></script>
   <script type="text/javascript" src="/bower_components/angular/angular.min.js" ></script>
   <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js" ></script>
+  <script type="text/javascript" src="/bower_components/angular-animate/angular-animate.min.js" ></script>
+
   <script type="text/javascript" src="/js/main-app.module.js" ></script>
 
   </body>
