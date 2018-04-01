@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Serimantic</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body ng-app="mainApp">
+
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--                                                                            -->
+  <!--                                  Navbar                                    -->
+  <!--                                                                            -->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <nav class="black" role="navigation">
+
+    <div class="nav-wrapper container">
+      <ul class="left hide-on-med-and-down">
+        <li><a ui-sref="recommandations">Recommandations</a></li>
+        <li><a href="">Liste des s&eacute;ries</a></li>
+      </ul>
+
+      <a id="logo-container" href="/" class="brand-logo center green-text text-lighten-2">Serimantic</a>
+
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" class="black white-text" required>
+              <label class="label-icon" for="search"><i class="material-icons white-text">search</i></label>
+            </div>
+          </form>
+        </li>
+        
+        <li><a href="#"><i class="material-icons green-text text-lighten-2">account_circle</i></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#">Profil</a></li>
+      </ul>
+      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--                                                                            -->
+  <!--                              Main container                                -->
+  <!--                                                                            -->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <div class="section no-pad-bot" id="content" ui-view>
+    
+  </div>
+
+  <footer class="page-footer green darken-4" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Bio</h5>
+          <p class="grey-text text-lighten-4">Blablabla</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Liste 1</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Lien 1</a></li>
+            <li><a class="white-text" href="#!">Lien 2</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Liste 2</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Lien 3</a></li>
+            <li><a class="white-text" href="#!">Lien 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright center">
+      <div class="container">
+        <ul>
+          <li>Johann Benerradi, Quentin Pouvreau, Laurine ASMR, Justinien Ghorra</li>
+          <li>CSS Framework -- <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a></li>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript" src="/bower_components/angular/angular.min.js" ></script>
+  <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js" ></script>
+  <script type="text/javascript" src="/js/main-app.module.js" ></script>
+
+  </body>
+</html>
