@@ -7,7 +7,7 @@ import lib.tmdbsimple as tmdb
 import os
 
 def writeDefaultFile (seriesName, keywords):
-    with open("../samples/saves/default.tal", "a", encoding="utf8") as writeFile:
+    with open("../data/default.tal", "a", encoding="utf8") as writeFile:
         stringToWrite = seriesName + "|"
         for k in keywords:
             stringToWrite = stringToWrite + k + ";"

@@ -7,7 +7,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import RegexpTokenizer
 from nltk.tag import pos_tag
 
-stopWordsFile = open('../samples/stopWords.txt','r',encoding="utf8")
+stopWordsFile = open('../data/stopWords.txt','r',encoding="utf8")
 stopWords = []
 for word in stopWordsFile.readlines():
     stopWords.append(word)
