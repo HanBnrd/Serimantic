@@ -31,7 +31,15 @@ body {
 #mainFooter {
 	flex: 1 0 auto;
 }
-@font-face {
-	font-family: 'Streamster';
-	src: url('../fonts/Streamster.ttf') format('truetype');
+
+input[type="search"]::-webkit-input-placeholder {
+color: lightgreen !important;
+}
+
+input[type="search"]::-moz-placeholder {
+color: lightgreen !important;  
+}
+ 
+input[type="search"]:-ms-input-placeholder {  
+color: lightgreen !important;  
 }

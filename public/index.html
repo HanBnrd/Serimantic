@@ -19,26 +19,36 @@
   <nav class="black" role="navigation">
 
     <div class="nav-wrapper row">
-      <div class="hide-on-med-and-down col xl4 offset-xl1">
+      <!-- Left buttons-->
+      <div class="hide-on-med-and-down col l5 xl4 offset-xl1">
         <ul>
           <li><a ui-sref="recommandations" class="btn black waves-effect waves-light">Recommendations</a></li>
           <li><a ui-sref="" class="btn black waves-effect waves-light">TV Shows</a></li>
         </ul>
       </div>
 
-      <div class="col xl2">
+      <!-- Center logo-->
+      <div class="col xl2 l2">
         <a id="logo-container" href="/" class="brand-logo black center green-text text-lighten-2">Serimantic</a>
       </div>
 
-      <div class="hide-on-med-and-down col xl4 right">
+      <!-- Right buttons and search bar -->
+      <div class="hide-on-med-and-down col l4 xl4 offset-xl1 right">
         <ul class="row">
-          <li class="s6">
-            <a href="#" class="btn pulse black waves-effect waves-light">
+          <li class="col s6">
+            <!--<a href="#" class="btn pulse black waves-effect waves-light">
               <i class="material-icons white-text text-lighten-2">search</i>
-            </a>
-
+            </a>-->
+            <form class="green-text">
+              <div class="input-field">
+                <input placeholder="Search" id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
           </li>
-          <li class="s6">
+
+          <li class="col s2">
             <a href="#" class="btn black waves-effect waves-light">
               <i class="material-icons white-text text-lighten-2">account_circle</i>
             </a>
@@ -46,9 +56,27 @@
         </ul>
       </div>
 
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-        <li><a href="#">Profil</a></li>
+      <ul id="nav-mobile" class="sidenav black">
+        <li>
+          <div class="row">
+            <div class="col s4 offset-s4">
+              <a href="/" class="black center green-text text-lighten-2">Menu</a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="btn black waves-effect waves-light">
+                <i class="material-icons white-text text-lighten-2">account_circle</i>
+              </a>
+            </div>
+        </li>
+        <li>
+         <form class="green-text">
+            <div class="input-field">
+              <input placeholder="Search" id="search" type="search" required>
+            </div>
+          </form>
+        </li>
+        <li><a ui-sref="recommandations" class="btn black waves-effect waves-light">Recommendations</a></li>
+        <li><a ui-sref="" class="btn black waves-effect waves-light">TV Shows</a></li>
       </ul>
       <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
