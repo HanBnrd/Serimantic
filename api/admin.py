@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Name, Keyword, Tag
 
-# Register your models here.
+
+admin.site.register(Name)
+admin.site.register(Keyword)
+admin.site.register(Tag)
