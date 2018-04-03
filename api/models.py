@@ -1,3 +1,18 @@
 from django.db import models
 
-# Create your models here.
+
+class Name(models.Model):
+    name = models.CharField(max_length=45)
+
+    def __str__(self):
+        return self.name
+
+class Keyword(models.Model):
+    keyword = models.CharField(max_length=45)
+
+    def __str__(self):
+        return self.keyword
+
+class Tag(models.Model):
+    name = models.ForeignKey(Name, on_delete=models.CASCADE)
+    keyword = models.ForeignKey(Keyword, on_delete=models.CASCADE)
