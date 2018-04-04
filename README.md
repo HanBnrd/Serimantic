@@ -20,6 +20,66 @@ Requires:
   - [NLTK 3.2.5](http://www.nltk.org)  
   - [TMDB API key](https://www.themoviedb.org/documentation/api)  
 
+## Web part
+### Installation
+#### 1) Install Django and Django Rest Framework
+```bash    
+pip install django
+
+pip install djangorestframework
+
+pip install markdown       # Markdown support for the browsable API.
+
+pip install django-filter
+
+```
+#### 2) Install MySQL Server and the connector for Python
+```bash
+sudo apt install mysql-server
+
+sudo apt install libmysqlclient-dev python-dev python-mysqldb
+
+pip install mysql
+
+sudo apt install python3-mysql.connector 
+
+pip install mysqlclient
+
+```
+#### 3) In MySQL, create a new database "serimantic"
+```bash
+
+mysql -u root -p
+
+create database serimantic;
+
+exit
+```
+#### 4) Create a superuser account for the database 
+```bash
+
+python3 manage.py createsuperuser
+
+```
+#### 5) Put your own settings.py file into Serimantic/ folder (a template will be located in the project)
+
+#### 6) Make database migration
+```bash
+
+python3 manage.py makemigrations
+
+python3 manage.py migrate
+
+python3 manage.py loaddata data/fixtures/initData.json
+
+```
+#### 7) Run the server
+```bash
+
+python3 manage.py runserver
+
+```
+#### 8) Everything is (normally) done !
 
 ### Utilisation
 ##### Configuration de l'API key  
