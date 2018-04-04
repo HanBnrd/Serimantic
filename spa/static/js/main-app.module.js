@@ -10,19 +10,24 @@ function chunk (arr, size) {
 var app = angular.module("mainApp", ['ui.router','ngAnimate']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
+    /*
+    //we have to change the symbols because both Django & AngularJS use the same characters
+    $interpolateProvider.startSymbol('{$');
+    $interpolateProvider.endSymbol('$}');
+    */
 
     $stateProvider
         .state('recommandations', {
             url: '/recommandations',
-            templateUrl: 'views/recommandations.html'
+            templateUrl: 'static/views/recommandations.html'
         })
         .state('ficheserie', {
             url: '/ficheserie',
-            templateUrl: 'views/ficheserie.html'
+            templateUrl: 'static/views/ficheserie.html'
         })
         .state('default', {
         	url: '',
-        	templateUrl: 'views/accueil.html'
+        	templateUrl: 'static/views/accueil.html'
         });
 
 });

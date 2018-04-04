@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,8 @@
   <title>Serimantic</title>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
 <body ng-app="mainApp">
@@ -127,13 +128,13 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.min.js"></script>
-  <script src="js/init.js"></script>
-  <script type="text/javascript" src="/bower_components/angular/angular.min.js" ></script>
-  <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js" ></script>
-  <script type="text/javascript" src="/bower_components/angular-animate/angular-animate.min.js" ></script>
+  <script src="/static/js/materialize.min.js"></script>
+  <script src="/static/js/init.js"></script>
+  <script type="text/javascript" src="/static/bower_components/angular/angular.min.js" ></script>
+  <script type="text/javascript" src="/static/bower_components/angular-ui-router/release/angular-ui-router.js" ></script>
+  <script type="text/javascript" src="/static/bower_components/angular-animate/angular-animate.min.js" ></script>
 
-  <script type="text/javascript" src="/js/main-app.module.js" ></script>
+  <script type="text/javascript" src="/static/js/main-app.module.js" ></script>
 
   </body>
 </html>
