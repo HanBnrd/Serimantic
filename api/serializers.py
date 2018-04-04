@@ -10,4 +10,4 @@ class NameSerializer(serializers.ModelSerializer):
 class KeywordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Keyword
-        fields = ('url', 'keyword')
+        fields = '__all__'
