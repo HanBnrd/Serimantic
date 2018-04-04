@@ -8,7 +8,7 @@ print('****************************')
 print('| Recommandation de séries |')
 print('****************************')
 print('Liste de séries disponibles : ')
-default = open('../samples/saves/default.tal','r',encoding='utf8')
+default = open('../data/default.tal','r',encoding='utf8')
 TVShowList = getList(default) # Obtention de la liste de séries importées
 print(TVShowList)
 print('')

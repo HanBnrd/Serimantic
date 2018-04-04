@@ -12,7 +12,7 @@ APIkey.close()
 tmdb.API_KEY = key # database key
 search = tmdb.Search() # searching instantiation
 
-fichier = open('../samples/tvlist.txt','r',encoding="utf8")
+fichier = open('../data/tvlist.txt','r',encoding="utf8")
 
 index = -1
 for line in fichier.readlines():
