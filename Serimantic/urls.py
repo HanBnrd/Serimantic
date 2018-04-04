@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
-from api import views
+from api import views as viewsAPI
+from spa import views as viewsSPA
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/names', views.NameList.as_view()),
-    url(r'^api/keywords', views.KeywordList.as_view()),
+    url(r'^api/names', viewsAPI.NameList.as_view()),
+    url(r'^api/keywords', viewsAPI.KeywordList.as_view()),
+    url('', viewsSPA.index, name="index"),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
