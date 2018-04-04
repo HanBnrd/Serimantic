@@ -15,11 +15,11 @@
 
 /* Checkboxes color */
 .switch label input[type=checkbox]:checked + .lever {
-  background-color: mediumseagreen;
+  background-color: teal;
 }
 
 .switch label input[type=checkbox]:checked + .lever:after {
-  background-color: darkgreen;
+  background-color: darkcyan;
 }
 
 body {
@@ -33,13 +33,13 @@ body {
 }
 
 input[type="search"]::-webkit-input-placeholder {
-color: lightgreen !important;
+color: cyan !important;
 }
 
 input[type="search"]::-moz-placeholder {
-color: lightgreen !important;  
+color: cyan !important;  
 }
  
 input[type="search"]:-ms-input-placeholder {  
-color: lightgreen !important;  
+color: cyan !important;  
 }
