@@ -15,11 +15,11 @@
 
 /* Checkboxes color */
 .switch label input[type=checkbox]:checked + .lever {
-  background-color: teal;
+  background-color: mediumaquamarineteal;
 }
 
 .switch label input[type=checkbox]:checked + .lever:after {
-  background-color: darkcyan;
+  background-color: teal;
 }
 
 body {
