@@ -55,15 +55,9 @@ create database serimantic;
 
 exit
 ```
-#### 4) Create a superuser account for the database 
-```bash
+#### 4) Put your own settings.py file into Serimantic/ folder (a template will be located in the project)
 
-python3 manage.py createsuperuser
-
-```
-#### 5) Put your own settings.py file into Serimantic/ folder (a template will be located in the project)
-
-#### 6) Make database migration
+#### 5) Make database migration
 ```bash
 
 python3 manage.py makemigrations
@@ -71,6 +65,12 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 
 python3 manage.py loaddata data/fixtures/initData.json
+
+```
+#### 6) Create a superuser account for the database 
+```bash
+
+python3 manage.py createsuperuser
 
 ```
 #### 7) Run the server
