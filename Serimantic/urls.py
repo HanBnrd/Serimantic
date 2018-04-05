@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/names', viewsAPI.NameList.as_view()),
     url(r'^api/keywords', viewsAPI.KeywordList.as_view()),
+    url(r'^tmdb/(?P<tmdb_id>[0-9]{0,10})/$', viewsSPA.tvShowInfos),
     url('', viewsSPA.index, name="index"),
 ]
 
