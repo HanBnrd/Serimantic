@@ -3,441 +3,504 @@
 		"model": "api.name",
 		"pk": 1,
 		"fields": {
-			"name" : "Friends" 
+			"name" : "Friends", 
+			"tmdb_id" : "1668" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 2,
 		"fields": {
-			"name" : "How I Met Your Mother" 
+			"name" : "How I Met Your Mother", 
+			"tmdb_id" : "1100" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 3,
 		"fields": {
-			"name" : "Breaking Bad" 
+			"name" : "Breaking Bad", 
+			"tmdb_id" : "1396" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 4,
 		"fields": {
-			"name" : "Narcos" 
+			"name" : "Narcos", 
+			"tmdb_id" : "63351" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 5,
 		"fields": {
-			"name" : "Sense8" 
+			"name" : "Sense8", 
+			"tmdb_id" : "61664" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 6,
 		"fields": {
-			"name" : "Stranger Things" 
+			"name" : "Stranger Things", 
+			"tmdb_id" : "66732" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 7,
 		"fields": {
-			"name" : "NCIS: Los Angeles" 
+			"name" : "NCIS: Los Angeles", 
+			"tmdb_id" : "17610" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 8,
 		"fields": {
-			"name" : "NCIS: New Orleans" 
+			"name" : "NCIS: New Orleans", 
+			"tmdb_id" : "61387" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 9,
 		"fields": {
-			"name" : "CSI: Cyber" 
+			"name" : "CSI: Cyber", 
+			"tmdb_id" : "61811" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 10,
 		"fields": {
-			"name" : "CSI: NY" 
+			"name" : "CSI: NY", 
+			"tmdb_id" : "2458" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 11,
 		"fields": {
-			"name" : "Grey's Anatomy" 
+			"name" : "Grey's Anatomy", 
+			"tmdb_id" : "1416" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 12,
 		"fields": {
-			"name" : "ER" 
+			"name" : "ER", 
+			"tmdb_id" : "4588" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 13,
 		"fields": {
-			"name" : "Marvel's Daredevil" 
+			"name" : "Marvel's Daredevil", 
+			"tmdb_id" : "61889" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 14,
 		"fields": {
-			"name" : "Marvel's Iron Fist" 
+			"name" : "Marvel's Iron Fist", 
+			"tmdb_id" : "62127" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 15,
 		"fields": {
-			"name" : "Castle" 
+			"name" : "Castle", 
+			"tmdb_id" : "1419" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 16,
 		"fields": {
-			"name" : "The Mentalist" 
+			"name" : "The Mentalist", 
+			"tmdb_id" : "5920" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 17,
 		"fields": {
-			"name" : "Gossip Girl" 
+			"name" : "Gossip Girl", 
+			"tmdb_id" : "1395" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 18,
 		"fields": {
-			"name" : "Pretty Little Liars" 
+			"name" : "Pretty Little Liars", 
+			"tmdb_id" : "31917" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 19,
 		"fields": {
-			"name" : "The Middle" 
+			"name" : "The Middle", 
+			"tmdb_id" : "1422" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 20,
 		"fields": {
-			"name" : "Malcolm in the Middle" 
+			"name" : "Malcolm in the Middle", 
+			"tmdb_id" : "2004" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 21,
 		"fields": {
-			"name" : "The Walking Dead" 
+			"name" : "The Walking Dead", 
+			"tmdb_id" : "1402" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 22,
 		"fields": {
-			"name" : "Fear the Walking Dead" 
+			"name" : "Fear the Walking Dead", 
+			"tmdb_id" : "62286" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 23,
 		"fields": {
-			"name" : "Game of Thrones" 
+			"name" : "Game of Thrones", 
+			"tmdb_id" : "1399" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 24,
 		"fields": {
-			"name" : "Vikings" 
+			"name" : "Vikings", 
+			"tmdb_id" : "44217" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 25,
 		"fields": {
-			"name" : "The Handmaid's Tale" 
+			"name" : "The Handmaid's Tale", 
+			"tmdb_id" : "69478" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 26,
 		"fields": {
-			"name" : "Westworld" 
+			"name" : "Westworld", 
+			"tmdb_id" : "63247" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 27,
 		"fields": {
-			"name" : "Mr. Robot" 
+			"name" : "Mr. Robot", 
+			"tmdb_id" : "62560" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 28,
 		"fields": {
-			"name" : "The Flash" 
+			"name" : "The Flash", 
+			"tmdb_id" : "60735" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 29,
 		"fields": {
-			"name" : "Gotham" 
+			"name" : "Gotham", 
+			"tmdb_id" : "60708" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 30,
 		"fields": {
-			"name" : "Under the Dome" 
+			"name" : "Under the Dome", 
+			"tmdb_id" : "46331" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 31,
 		"fields": {
-			"name" : "The 100" 
+			"name" : "The 100", 
+			"tmdb_id" : "48866" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 32,
 		"fields": {
-			"name" : "The Blacklist" 
+			"name" : "The Blacklist", 
+			"tmdb_id" : "46952" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 33,
 		"fields": {
-			"name" : "Black Mirror" 
+			"name" : "Black Mirror", 
+			"tmdb_id" : "42009" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 34,
 		"fields": {
-			"name" : "Harlots" 
+			"name" : "Harlots", 
+			"tmdb_id" : "69541" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 35,
 		"fields": {
-			"name" : "13 Reasons Why" 
+			"name" : "13 Reasons Why", 
+			"tmdb_id" : "66788" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 36,
 		"fields": {
-			"name" : "Almost Human" 
+			"name" : "Almost Human", 
+			"tmdb_id" : "51019" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 37,
 		"fields": {
-			"name" : "Utopia" 
+			"name" : "Utopia", 
+			"tmdb_id" : "46511" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 38,
 		"fields": {
-			"name" : "Broadchurch" 
+			"name" : "Broadchurch", 
+			"tmdb_id" : "1427" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 39,
 		"fields": {
-			"name" : "The Fall" 
+			"name" : "The Fall", 
+			"tmdb_id" : "49010" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 40,
 		"fields": {
-			"name" : "Riverdale" 
+			"name" : "Riverdale", 
+			"tmdb_id" : "69050" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 41,
 		"fields": {
-			"name" : "The OA" 
+			"name" : "The OA", 
+			"tmdb_id" : "69061" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 42,
 		"fields": {
-			"name" : "Outcast" 
+			"name" : "Outcast", 
+			"tmdb_id" : "64394" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 43,
 		"fields": {
-			"name" : "Lie to Me" 
+			"name" : "Lie to Me", 
+			"tmdb_id" : "8358" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 44,
 		"fields": {
-			"name" : "The Big Bang Theory" 
+			"name" : "The Big Bang Theory", 
+			"tmdb_id" : "1418" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 45,
 		"fields": {
-			"name" : "Buffy the Vampire Slayer" 
+			"name" : "Buffy the Vampire Slayer", 
+			"tmdb_id" : "95" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 46,
 		"fields": {
-			"name" : "Star Trek" 
+			"name" : "Star Trek", 
+			"tmdb_id" : "253" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 47,
 		"fields": {
-			"name" : "House" 
+			"name" : "House", 
+			"tmdb_id" : "1408" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 48,
 		"fields": {
-			"name" : "Stargate Atlantis" 
+			"name" : "Stargate Atlantis", 
+			"tmdb_id" : "2290" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 49,
 		"fields": {
-			"name" : "Charmed" 
+			"name" : "Charmed", 
+			"tmdb_id" : "1981" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 50,
 		"fields": {
-			"name" : "American Horror Story" 
+			"name" : "American Horror Story", 
+			"tmdb_id" : "1413" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 51,
 		"fields": {
-			"name" : "Heroes" 
+			"name" : "Heroes", 
+			"tmdb_id" : "1639" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 52,
 		"fields": {
-			"name" : "Lost" 
+			"name" : "Lost", 
+			"tmdb_id" : "4607" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 53,
 		"fields": {
-			"name" : "Prison Break" 
+			"name" : "Prison Break", 
+			"tmdb_id" : "2288" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 54,
 		"fields": {
-			"name" : "Orange Is the New Black" 
+			"name" : "Orange Is the New Black", 
+			"tmdb_id" : "1424" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 55,
 		"fields": {
-			"name" : "Revolution" 
+			"name" : "Revolution", 
+			"tmdb_id" : "1410" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 56,
 		"fields": {
-			"name" : "Person of Interest" 
+			"name" : "Person of Interest", 
+			"tmdb_id" : "1411" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 57,
 		"fields": {
-			"name" : "Scorpion" 
+			"name" : "Scorpion", 
+			"tmdb_id" : "60797" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 58,
 		"fields": {
-			"name" : "Arrow" 
+			"name" : "Arrow", 
+			"tmdb_id" : "1412" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 59,
 		"fields": {
-			"name" : "Once Upon a Time" 
+			"name" : "Once Upon a Time", 
+			"tmdb_id" : "39272" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 60,
 		"fields": {
-			"name" : "Grimm" 
+			"name" : "Grimm", 
+			"tmdb_id" : "39351" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 61,
 		"fields": {
-			"name" : "Rectify" 
+			"name" : "Rectify", 
+			"tmdb_id" : "46619" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 62,
 		"fields": {
-			"name" : "La casa de papel" 
+			"name" : "La casa de papel", 
+			"tmdb_id" : "71446" 
 		}
 	},
 	{
 		"model": "api.name",
 		"pk": 63,
 		"fields": {
-			"name" : "Alias" 
+			"name" : "Alias", 
+			"tmdb_id" : "2046" 
 		}
 	},
 	{
