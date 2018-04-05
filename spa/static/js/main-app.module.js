@@ -32,6 +32,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 });
 
+/*app.config(function($interpolateProvider) {
+  $interpolateProvider.startSymbol('{%');
+  $interpolateProvider.endSymbol('%}');
+});*/
+
 app.provider("friendskeywords", function() {
     this.$get = function () {
         var keywords = ["date","friend","wedding","meet","occupation","apartment","privation","baby","play",
@@ -50,6 +55,22 @@ app.provider("friendskeywords", function() {
 app.controller("keywordsCtrl", function($scope, friendskeywords) {
     $scope.keywords = chunk(friendskeywords.keywords, 2);
 
+});
+
+app.controller('allNames', function($scope, $http) {
+    $http.get('/api/names').then(function(response) {
+        var names = {};
+        for(var i = 0; i < response.data.length; i++) {    
+            names[response.data[i].name] = null;
+        }
+
+        $(document).ready(function(){
+            $('input.autocomplete').autocomplete({
+                data: names,
+                limit: 8,
+            });
+        });
+    });
 });
 
 $(document).ready(function(){

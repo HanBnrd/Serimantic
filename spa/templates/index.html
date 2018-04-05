@@ -12,6 +12,7 @@
 </head>
 
 <body ng-app="mainApp">
+  {% verbatim %}
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--                                                                            -->
   <!--                                  Navbar                                    -->
@@ -34,29 +35,23 @@
       </div>
 
       <!-- Right buttons and search bar -->
-      <div class="hide-on-med-and-down col l4 xl4 offset-xl1 right">
+      <div class="hide-on-med-and-down col l4 xl4 offset-xl1 right" ng-controller="allNames">
         <ul class="row">
-          <li class="col s6">
-            <!--<a href="#" class="btn pulse black waves-effect waves-light">
-              <i class="material-icons white-text text-lighten-2">search</i>
-            </a>-->
-            <form class="teal-text">
-              <div class="input-field">
-                <input placeholder="Search" id="search" type="search" required>
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-              </div>
-            </form>
+          <li class="col s1 center">
+            <i class="white-text material-icons prefix">search</i>
           </li>
-
-          <li class="col s2">
+          <li class="col s6 offset-s1" id="searchbar">
+            <div class="input-field">
+              <input placeholder="Search" id="autocomplete-input" class="autocomplete s12" type="search" autocomplete="off" required>
+            </div>
+          </li>
+          <li class="col s2 center">
             <a href="#" class="btn black waves-effect waves-light">
               <i class="material-icons white-text text-lighten-2">account_circle</i>
             </a>
           </li>
         </ul>
       </div>
-
       <ul id="nav-mobile" class="sidenav black">
         <li>
           <div class="row">
@@ -136,5 +131,6 @@
 
   <script type="text/javascript" src="/static/js/main-app.module.js" ></script>
 
+  {% endverbatim %}
   </body>
 </html>
