@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import *
 from .serializers import *
+from src.processing import recommendation
 
 
 """
@@ -95,4 +96,17 @@ class KeywordFilter(APIView):
         for tag in tags:
             names.add(tag.name)
         serializer = NameSerializer(names, many=True)
+        return Response(serializer.data)
+
+
+"""
+Recommendation
+"""
+class Recommendation(APIView):
+
+    def get(self, request, *args, **kwargs):
+        series = kwargs.get('series')
+        rec = recommendation(series)
+        name = Name.objects.get(name=rec)
+        serializer = NameSerializer(name)
         return Response(serializer.data)

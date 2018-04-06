@@ -36,6 +36,8 @@ urlpatterns = [
     url(r'^api/tag/name/(?P<name>.*)/$', viewsAPI.NameFilter.as_view()),
     # Tag from keyword
     url(r'^api/tag/keyword/(?P<keyword>.*)/$', viewsAPI.KeywordFilter.as_view()),
+    # Series recommendation from name
+    url(r'^api/recommendation/(?P<series>.*)/$', viewsAPI.Recommendation.as_view()),
     # SPA
     url(r'^', viewsSPA.index, name="index"),
 ]
