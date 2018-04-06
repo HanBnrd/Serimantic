@@ -20,10 +20,20 @@ from api import views as viewsAPI
 from spa import views as viewsSPA
 
 urlpatterns = [
+    # Admin
     url(r'^admin/', admin.site.urls),
-    url(r'^api/names', viewsAPI.NameList.as_view()),
-    url(r'^api/keywords', viewsAPI.KeywordList.as_view()),
-    url('', viewsSPA.index, name="index"),
+    # Name API
+    url(r'^api/name/(?P<id>.*)/$', viewsAPI.NameList.as_view()),
+    # Keyword API
+    url(r'^api/keyword/(?P<id>.*)/$', viewsAPI.KeywordList.as_view()),
+    # Tag API
+    url(r'^api/tag/all', viewsAPI.TagList.as_view()),
+    # Tags filtered by name
+    url(r'^api/tag/name/(?P<series>.*)/$', viewsAPI.NameFilter.as_view()),
+    # Tags filtered by keyword
+    url(r'^api/tag/keyword/(?P<keyword>.*)/$', viewsAPI.KeywordFilter.as_view()),
+    # SPA
+    url(r'^', viewsSPA.index, name="index"),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
