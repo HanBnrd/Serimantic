@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.shortcuts import HttpResponse
 from django.shortcuts import redirect
-from django.http import HttpResponse
+import urllib.request as UR
 
 # Default index
 def index(request):
@@ -12,4 +13,5 @@ def tvShowInfos(request, tmdb_id):
 	key = APIkey.readline().split("\n")[0]
 	APIkey.close()
 	url = "https://api.themoviedb.org/3/tv/"+tmdb_id+"?api_key="+key+"&language=en-US"
-	return redirect(url)
+	response = UR.urlopen(url)
+	return HttpResponse(response.read())

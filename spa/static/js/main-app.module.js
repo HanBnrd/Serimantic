@@ -3,7 +3,6 @@ function chunk (arr, size) {
 	for (var i=0; i<arr.length; i+=size) {
 		newArr.push(arr.slice(i, i+size));
 	}
-	console.log(newArr)
 	return newArr;
 }
 
@@ -21,9 +20,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/recommandations',
             templateUrl: 'static/views/recommandations.html'
         })
-        .state('ficheserie', {
-            url: '/ficheserie',
-            templateUrl: 'static/views/ficheserie.html'
+        .state('tvshowcard', {
+            url: '/tvshowcard/:tmdb_id',
+            controller: 'tvShowCardController',
+            templateUrl: 'static/views/tvshowcard.html'
         })
         .state('default', {
         	url: '',
@@ -31,11 +31,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         });
 
 });
-
-/*app.config(function($interpolateProvider) {
-  $interpolateProvider.startSymbol('{%');
-  $interpolateProvider.endSymbol('%}');
-});*/
 
 app.provider("friendskeywords", function() {
     this.$get = function () {
@@ -73,15 +68,9 @@ app.controller('allNames', function($scope, $http) {
     });
 });
 
-$(document).ready(function(){
-	$('.dropdown-button').dropdown({
-			inDuration: 300,
-			outDuration: 225,
-			constrain_width: false, // Does not change width of dropdown to that of the activator
-			hover: true, // Activate on hover
-			gutter: 0, // Spacing from edge
-			belowOrigin: false, // Displays dropdown below the button
-			alignment: 'left' // Displays dropdown with edge aligned to the left of button
-		}
-	);
+app.controller('tvShowCardController', function($scope, $http, $stateParams) {
+    $http.get('/tmdb/'+$stateParams.tmdb_id+'/').then(function(response) {
+        $scope.tvShowData = response.data;
+        console.log($scope.tvShowData);
+    });
 });
