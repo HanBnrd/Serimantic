@@ -39,8 +39,6 @@ sudo apt install mysql-server
 
 sudo apt install libmysqlclient-dev python-dev python-mysqldb
 
-pip install mysql
-
 sudo apt install python3-mysql.connector 
 
 pip install mysqlclient
