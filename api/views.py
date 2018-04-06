@@ -66,7 +66,10 @@ class NameFilter(APIView):
         series = kwargs.get('series')
         series_id = Name.objects.get(name=series).id
         tags = Tag.objects.filter(name_id=series_id)
-        serializer = TagSerializer(tags, many=True)
+        keywords = set()
+        for tag in tags:
+            keywords.add(tag.keyword)
+        serializer = KeywordSerializer(keywords, many=True)
         return Response(serializer.data)
 
 # Tags filtered by keyword
@@ -76,5 +79,8 @@ class KeywordFilter(APIView):
         keyword = kwargs.get('keyword')
         keyword_id = Keyword.objects.get(keyword=keyword).id
         tags = Tag.objects.filter(keyword_id=keyword_id)
-        serializer = TagSerializer(tags, many=True)
+        names = set()
+        for tag in tags:
+            names.add(tag.name)
+        serializer = NameSerializer(names, many=True)
         return Response(serializer.data)
