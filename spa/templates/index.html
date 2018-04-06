@@ -40,9 +40,12 @@
           <li class="col s1 center">
             <i class="white-text material-icons prefix">search</i>
           </li>
-          <li class="col s6 offset-s1" id="searchbar">
+          <li class="col s6 offset-s1" id="searchbar" ng-controller="submitSearchController">
             <div class="input-field">
-              <input placeholder="Search" id="autocomplete-input" class="autocomplete s12" type="search" autocomplete="off" required>
+              <form ng-submit="tvShowCard()">
+                <input placeholder="Search for a TV show" id="autocomplete-input" class="autocomplete s12" type="search" autocomplete="off" ng-model="tvShowName" required>
+                <input type="submit" class="hide">
+              </form>
             </div>
           </li>
           <li class="col s2 center">

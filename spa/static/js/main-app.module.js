@@ -54,15 +54,17 @@ app.controller("keywordsCtrl", function($scope, friendskeywords) {
 
 app.controller('allNames', function($scope, $http) {
     $http.get('/api/names').then(function(response) {
-        var names = {};
+        var tvShowNames = {};
         for(var i = 0; i < response.data.length; i++) {    
-            names[response.data[i].name] = null;
+            tvShowNames[response.data[i].name] = null;
         }
+
+        $scope.names = tvShowNames;
 
         $(document).ready(function(){
             $('input.autocomplete').autocomplete({
-                data: names,
-                limit: 8,
+                data: $scope.names,
+                limit: 8
             });
         });
     });
@@ -71,6 +73,11 @@ app.controller('allNames', function($scope, $http) {
 app.controller('tvShowCardController', function($scope, $http, $stateParams) {
     $http.get('/tmdb/'+$stateParams.tmdb_id+'/').then(function(response) {
         $scope.tvShowData = response.data;
-        console.log($scope.tvShowData);
     });
+});
+
+app.controller('submitSearchController', function($scope) {
+    $scope.tvShowCard = function () {
+        console.log("ça marche");
+    };
 });

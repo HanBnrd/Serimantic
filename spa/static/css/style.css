@@ -25,16 +25,11 @@ body {
 
 /* Checkboxes color */
 .switch label input[type=checkbox]:checked + .lever {
-  background-color: mediumaquamarineteal;
+  background-color: mediumaquamarine;
 }
 
 .switch label input[type=checkbox]:checked + .lever:after {
   background-color: teal;
-}
-
-.material-icons{
-    display: inline-flex;
-    vertical-align: top;
 }
 
 #searchbar {
@@ -43,18 +38,18 @@ body {
 
 #autocomplete-input {
 	padding-left: 1rem;
-	width:100%;	
+	width:100%;
 }
 
 /* Text color in the searchbar */
-input[type="search"]::-webkit-input-placeholder {
+#autocomplete-input::placeholder {
 	color: cyan !important;
 }
 
-input[type="search"]::-moz-placeholder {
+#autocomplete-input::-moz-placeholder {
 	color: cyan !important;  
 }
  
-input[type="search"]:-ms-input-placeholder {  
+#autocomplete-input:-ms-input-placeholder {  
 	color: cyan !important;  
 }

@@ -8,7 +8,6 @@ def index(request):
     return render(request, "index.html")
 
 def tvShowInfos(request, tmdb_id):
-	fichier = open('data/default.tal','r',encoding="utf8")
 	APIkey = open('api.key','r',encoding="utf8")
 	key = APIkey.readline().split("\n")[0]
 	APIkey.close()
