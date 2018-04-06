@@ -3,8 +3,13 @@
           <img class="col s3 materialboxed" src="https://image.tmdb.org/t/p/w500{{ tvShowData['poster_path'] }}"/>
 
         <div class="col s6">
-          <h1 id="seriestitle">{{tvShowData["name"]}}</h1>
-          <h6>{{tvShowData["overview"]}}</h6>
+          <div class="row">
+            <h1 id="seriestitle">{{tvShowData["name"]}}</h1>
+            <h6>{{tvShowData["overview"]}}</h6>
+          </div>
+          <div class="row">
+            <h5>If you liked {{tvShowData["name"]}}, then you will probably like <a ui-sref="tvshowcard({tv_show_name:recommendedShow['name'], tmdb_id:recommendedShow['tmdb_id']})">{{recommendedShow["name"]}}</a>.</h5>
+          </div>
         </div>
 
         <div class="col s3">

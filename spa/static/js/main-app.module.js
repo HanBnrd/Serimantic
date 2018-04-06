@@ -61,7 +61,12 @@ app.controller('tvShowCardController', function($scope, $http, $stateParams) {
             keywordsArray.push(response.data[i]["keyword"]);
         }
         $scope.keywords = chunk(keywordsArray, 2);
-    })
+    });
+
+    $http.get('api/recommendation/'+$stateParams.tv_show_name+'/').then(function(response) {
+        $scope.recommendedShow = response.data;
+        console.log(response.data);
+    });
 });
 
 
