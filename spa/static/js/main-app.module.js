@@ -53,7 +53,7 @@ app.controller("keywordsCtrl", function($scope, friendskeywords) {
 });
 
 app.controller('allNames', function($scope, $http) {
-    $http.get('/api/names').then(function(response) {
+    $http.get('/api/tv/all').then(function(response) {
         var tvShowNames = {};
         for(var i = 0; i < response.data.length; i++) {    
             tvShowNames[response.data[i].name] = null;

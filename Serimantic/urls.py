@@ -20,11 +20,27 @@ from api import views as viewsAPI
 from spa import views as viewsSPA
 
 urlpatterns = [
+    # Admin
     url(r'^admin/', admin.site.urls),
-    url(r'^api/names', viewsAPI.NameList.as_view()),
-    url(r'^api/keywords', viewsAPI.KeywordList.as_view()),
+    # Name API
+    url(r'^api/tv/all', viewsAPI.NameList.as_view()),
+    # Name from id
+    url(r'^api/tv/id/(?P<id>.*)/$', viewsAPI.NameListId.as_view()),
+    # Name from name
+    url(r'^api/tv/name/(?P<name>.*)/$', viewsAPI.NameListName.as_view()),
+    # Keyword API
+    url(r'^api/keyword/(?P<id>.*)/$', viewsAPI.KeywordList.as_view()),
+    # Tag API
+    url(r'^api/tag/all', viewsAPI.TagList.as_view()),
+    # Tag from name
+    url(r'^api/tag/name/(?P<name>.*)/$', viewsAPI.NameFilter.as_view()),
+    # Tag from keyword
+    url(r'^api/tag/keyword/(?P<keyword>.*)/$', viewsAPI.KeywordFilter.as_view()),
+    # Series recommendation from name
+    url(r'^api/recommendation/(?P<series>.*)/$', viewsAPI.Recommendation.as_view()),
+    # TMDB API for the TV show record
     url(r'^tmdb/(?P<tmdb_id>[0-9]{0,10})/$', viewsSPA.tvShowInfos),
-    url('', viewsSPA.index, name="index"),
-]
+    # SPA index
+    url(r'^', viewsSPA.index, name="index"),]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
