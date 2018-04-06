@@ -1,11 +1,3 @@
-function chunk (arr, size) {
-	var newArr = [];
-	for (var i=0; i<arr.length; i+=size) {
-		newArr.push(arr.slice(i, i+size));
-	}
-	return newArr;
-}
-
 var app = angular.module("mainApp", ['ui.router','ngAnimate']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -21,7 +13,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'static/views/recommandations.html'
         })
         .state('tvshowcard', {
-            url: '/tvshowcard/:tmdb_id',
+            url: '/tvshowcard/:tv_show_name/:tmdb_id',
             controller: 'tvShowCardController',
             templateUrl: 'static/views/tvshowcard.html'
         })
@@ -29,26 +21,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         	url: '',
         	templateUrl: 'static/views/accueil.html'
         });
-
-});
-
-app.provider("friendskeywords", function() {
-    this.$get = function () {
-        var keywords = ["date","friend","wedding","meet","occupation","apartment","privation","baby","play",
-        				"party","girl","work","gang","love","guy","visit","together","look","call","semen"];
-        return {
-            keywords,
-            "find": function (id) {
-                if (id < keywords.length) {
-                    return keywords[id];
-                }
-            }
-        };
-    }
-});
-
-app.controller("keywordsCtrl", function($scope, friendskeywords) {
-    $scope.keywords = chunk(friendskeywords.keywords, 2);
 
 });
 
@@ -71,13 +43,32 @@ app.controller('allNames', function($scope, $http) {
 });
 
 app.controller('tvShowCardController', function($scope, $http, $stateParams) {
+    var chunk = function (arr, size) {
+        var newArr = [];
+        for (var i=0; i<arr.length; i+=size) {
+            newArr.push(arr.slice(i, i+size));
+        }
+        return newArr;
+    }
+
     $http.get('/tmdb/'+$stateParams.tmdb_id+'/').then(function(response) {
         $scope.tvShowData = response.data;
     });
+
+    $http.get('api/tag/name/'+$stateParams.tv_show_name+'/').then(function(response) {
+        var keywordsArray = [];
+        for (var i=0; i<response.data.length; i+=1) {
+            keywordsArray.push(response.data[i]["keyword"]);
+        }
+        $scope.keywords = chunk(keywordsArray, 2);
+    })
 });
 
-app.controller('submitSearchController', function($scope) {
+
+app.controller('submitSearchController', function($http, $scope, $location) {
     $scope.tvShowCard = function () {
-        console.log("ça marche");
+        $http.get('/api/tv/name/'+$scope.tvShowName+'/').then(function(response) {
+            $location.path('/tvshowcard/'+$scope.tvShowName+'/'+response.data["tmdb_id"]);
+        });
     };
 });
