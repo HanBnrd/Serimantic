@@ -23,19 +23,17 @@ urlpatterns = [
     # Admin
     url(r'^admin/', admin.site.urls),
     # Name API
-    url(r'^api/tv/all', viewsAPI.NameList.as_view()),
-    # Name from id
-    url(r'^api/tv/id/(?P<id>.*)/$', viewsAPI.NameListId.as_view()),
-    # Name from name
-    url(r'^api/tv/name/(?P<name>.*)/$', viewsAPI.NameListName.as_view()),
+    url(r'^api/tv/all/$', viewsAPI.NameList.as_view()),
+    url(r'^api/tv/id/(?P<id>.*)/$', viewsAPI.NameFromId.as_view()),
+    url(r'^api/tv/name/(?P<name>.*)/$', viewsAPI.NameFromName.as_view()),
+    url(r'^api/tv/tag/(?P<keyword>.*)/$', viewsAPI.NameFromKeyword.as_view()),
     # Keyword API
-    url(r'^api/keyword/(?P<id>.*)/$', viewsAPI.KeywordList.as_view()),
+    url(r'^api/keyword/all/$', viewsAPI.KeywordList.as_view()),
+    url(r'^api/keyword/id/(?P<id>.*)/$', viewsAPI.KeywordFromId.as_view()),
+    url(r'^api/keyword/tag/(?P<name>.*)/$', viewsAPI.KeywordFromName.as_view()),
+    url(r'^api/keyword/freq/(?P<top>.*)/$', viewsAPI.KeywordFrequent.as_view()),
     # Tag API
-    url(r'^api/tag/all', viewsAPI.TagList.as_view()),
-    # Tag from name
-    url(r'^api/tag/name/(?P<name>.*)/$', viewsAPI.NameFilter.as_view()),
-    # Tag from keyword
-    url(r'^api/tag/keyword/(?P<keyword>.*)/$', viewsAPI.KeywordFilter.as_view()),
+    url(r'^api/tag/all/$', viewsAPI.TagList.as_view()),
     # Series recommendation from name
     url(r'^api/recommendation/(?P<series>.*)/$', viewsAPI.Recommendation.as_view()),
     # SPA
