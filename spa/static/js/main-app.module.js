@@ -8,9 +8,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
     */
 
     $stateProvider
-        .state('recommandations', {
-            url: '/recommandations',
-            templateUrl: 'static/views/recommandations.html'
+        .state('recommendations', {
+            url: '/recommendations',
+            templateUrl: 'static/views/recommendations.html'
         })
         .state('tvshowcard', {
             url: '/tvshowcard/:tv_show_name/:tmdb_id',

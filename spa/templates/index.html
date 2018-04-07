@@ -13,25 +13,25 @@
 
 <body ng-app="mainApp">
   {% verbatim %}
-  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  <!--                                                                            -->
-  <!--                                  Navbar                                    -->
-  <!--                                                                            -->
-  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--                                                   -->
+  <!--                      Navbar                       -->
+  <!--                                                   -->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <nav class="black" role="navigation">
 
     <div class="nav-wrapper row">
       <!-- Left buttons-->
       <div class="hide-on-med-and-down col l5 xl4 offset-xl1">
         <ul>
-          <li><a ui-sref="recommandations" class="btn black waves-effect waves-light">Recommendations</a></li>
+          <li><a ui-sref="recommendations" class="btn black waves-effect waves-light">Recommendations</a></li>
           <li><a ui-sref="" class="btn black waves-effect waves-light">TV Shows</a></li>
         </ul>
       </div>
 
       <!-- Center logo-->
       <div class="col xl2 l2">
-        <a id="logo-container" href="/" class="brand-logo black center teal-text text-lighten-2">Serimantic</a>
+        <a id="logo-container" href="/" class="no-uppercase brand-logo black center teal-text text-lighten-2">Serimantic</a>
       </div>
 
       <!-- Right buttons and search bar -->
@@ -80,7 +80,7 @@
       <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-
+  <div class="background-image"></div>
   <div ui-view class="section no-pad-bot" id="content">
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--                                                                            -->
@@ -114,12 +114,10 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright center">
-      <div class="container">
-        <ul>
-          <li>Johann Benerradi, Quentin Pouvreau, Laurine ASMR, Justinien Ghorra</li>
-          <li>Copyright (c) 2014 <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a></li>
-      </div>
+    <div class="container center">
+      <ul>
+        <li>Johann Benerradi, Quentin Pouvreau, Laurine ASMR, Justinien Ghorra</li>
+        <li>Copyright (c) 2014 <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a></li>
     </div>
   </footer>
 
