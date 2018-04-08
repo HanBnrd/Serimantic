@@ -8,12 +8,12 @@
             <h6>{{tvShowData["overview"]}}</h6>
           </div>
           <div class="row">
-            <h5>If you liked {{tvShowData["name"]}}, then you will probably like <a ui-sref="tvshowcard({tv_show_name:recommendedShow['name'], tmdb_id:recommendedShow['tmdb_id']})">{{recommendedShow["name"]}}</a>.</h5>
+            <h5>You may also like <a ui-sref="tvshowcard({tv_show_name:recommendedShow['name'], tmdb_id:recommendedShow['tmdb_id']})">{{recommendedShow["name"]}}</a></h5>
           </div>
         </div>
 
         <div class="col s3">
-          <h5>Genres</h5>
+          <h5>Genre</h5>
           <ul>
             <li ng-repeat="genre in tvShowData['genres']">{{genre["name"]}}</li>
           </ul>
