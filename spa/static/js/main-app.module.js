@@ -25,7 +25,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 app.controller('allNames', function($scope, $http) {
-    $http.get('/api/tv/all').then(function(response) {
+    $http.get('/api/tv/all/').then(function(response) {
         var tvShowNames = {};
         for(var i = 0; i < response.data.length; i++) {    
             tvShowNames[response.data[i].name] = null;
@@ -51,11 +51,11 @@ app.controller('tvShowCardController', function($scope, $http, $stateParams) {
         return newArr;
     }
 
-    $http.get('/tmdb/'+$stateParams.tmdb_id+'/').then(function(response) {
+    $http.get('tmdb/'+$stateParams.tmdb_id+'/').then(function(response) {
         $scope.tvShowData = response.data;
     });
 
-    $http.get('api/tag/name/'+$stateParams.tv_show_name+'/').then(function(response) {
+    $http.get('api/keyword/name/'+$stateParams.tv_show_name+'/').then(function(response) {
         var keywordsArray = [];
         for (var i=0; i<response.data.length; i+=1) {
             keywordsArray.push(response.data[i]["keyword"]);
@@ -65,7 +65,6 @@ app.controller('tvShowCardController', function($scope, $http, $stateParams) {
 
     $http.get('api/recommendation/'+$stateParams.tv_show_name+'/').then(function(response) {
         $scope.recommendedShow = response.data;
-        console.log(response.data);
     });
 });
 
