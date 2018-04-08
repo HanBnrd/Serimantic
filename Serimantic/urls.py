@@ -26,12 +26,14 @@ urlpatterns = [
     url(r'^api/tv/all/$', viewsAPI.NameList.as_view()),
     url(r'^api/tv/id/(?P<id>.*)/$', viewsAPI.NameFromId.as_view()),
     url(r'^api/tv/name/(?P<name>.*)/$', viewsAPI.NameFromName.as_view()),
-    url(r'^api/tv/tag/(?P<keyword>.*)/$', viewsAPI.NameFromKeyword.as_view()),
+    url(r'^api/tv/keyword/(?P<keyword>.*)/$', viewsAPI.NameFromKeyword.as_view()),
+    url(r'^api/tv/keywordids/(?P<keywordids>.*)/$', viewsAPI.NameFromKeywordIds.as_view()),
     # Keyword API
     url(r'^api/keyword/all/$', viewsAPI.KeywordList.as_view()),
     url(r'^api/keyword/id/(?P<id>.*)/$', viewsAPI.KeywordFromId.as_view()),
-    url(r'^api/keyword/tag/(?P<name>.*)/$', viewsAPI.KeywordFromName.as_view()),
-    url(r'^api/keyword/freq/(?P<top>.*)/$', viewsAPI.KeywordFrequent.as_view()),
+    url(r'^api/keyword/name/(?P<name>.*)/$', viewsAPI.KeywordFromName.as_view()),
+    url(r'^api/keyword/freq/(?P<n>.*)/$', viewsAPI.KeywordFrequent.as_view()),
+    url(r'^api/keyword/discover/(?P<n>.*)/$', viewsAPI.KeywordRandom.as_view()),
     # Tag API
     url(r'^api/tag/all/$', viewsAPI.TagList.as_view()),
     # Series recommendation from name

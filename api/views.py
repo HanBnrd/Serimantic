@@ -52,6 +52,20 @@ class NameFromKeyword(APIView):
         serializer = NameSerializer(names, many=True)
         return Response(serializer.data)
 
+# Name from keyword ids
+class NameFromKeywordIds(APIView):
+
+    def get(self, request, *args, **kwargs):
+        keyword_set = kwargs.get('keywordids')
+        keyword_ids = keyword_set.split('&')
+        names = Name.objects.all()
+        for keyword_id in keyword_ids:
+            for name in Name.objects.all():
+                if not Tag.objects.filter(name_id=name.id,keyword_id=keyword_id):
+                    names = names.exclude(id=name.id)
+        serializer = NameSerializer(names, many=True)
+        return Response(serializer.data)
+
 
 """
 Keywords
@@ -88,20 +102,31 @@ class KeywordFromName(APIView):
         serializer = KeywordSerializer(keywords, many=True)
         return Response(serializer.data)
 
-
 # Most frequent keywords
 class KeywordFrequent(APIView):
 
     def get(self, request, *args, **kwargs):
-        top = int(kwargs.get('top'))
+        n = int(kwargs.get('n'))
         tags = Tag.objects.values_list('keyword_id').annotate(keyword_count=Count('keyword_id')).order_by('-keyword_count')
         keywords = set()
-        for cpt in range(top):
+        for cpt in range(n):
             keyword = Keyword.objects.get(id=tags[cpt][0])
             keywords.add(keyword)
         serializer = KeywordSerializer(keywords, many=True)
         return Response(serializer.data)
 
+# Random keywords
+class KeywordRandom(APIView):
+
+    def get(self, request, *args, **kwargs):
+        n = int(kwargs.get('n'))
+        tags = Tag.objects.values_list('keyword_id').order_by('?')
+        keywords = set()
+        for cpt in range(n):
+            keyword = Keyword.objects.get(id=tags[cpt][0])
+            keywords.add(keyword)
+        serializer = KeywordSerializer(keywords, many=True)
+        return Response(serializer.data)
 
 
 """
@@ -116,7 +141,6 @@ class TagList(APIView):
 
     def post(self):
         pass
-
 
 
 """
