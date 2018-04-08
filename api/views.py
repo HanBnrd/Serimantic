@@ -120,11 +120,7 @@ class KeywordRandom(APIView):
 
     def get(self, request, *args, **kwargs):
         n = int(kwargs.get('n'))
-        tags = Tag.objects.values_list('keyword_id').order_by('?')
-        keywords = set()
-        for cpt in range(n):
-            keyword = Keyword.objects.get(id=tags[cpt][0])
-            keywords.add(keyword)
+        keywords = Keyword.objects.order_by('?')[0:n]
         serializer = KeywordSerializer(keywords, many=True)
         return Response(serializer.data)
 
