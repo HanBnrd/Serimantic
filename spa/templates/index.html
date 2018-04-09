@@ -24,8 +24,8 @@
       <!-- Left buttons-->
       <div class="hide-on-med-and-down col l5 xl4 offset-xl1">
         <ul>
-          <li><a ui-sref="recommendations" class="btn black waves-effect waves-light">Recommendations</a></li>
-          <li><a ui-sref="" class="btn black waves-effect waves-light">TV Shows</a></li>
+          <li><a ui-sref="tvshows" class="btn black waves-effect waves-light">TV Shows</a></li>
+          <li><a ui-sref="discover" class="btn black waves-effect waves-light">Discover</a></li>
         </ul>
       </div>
 
@@ -39,7 +39,7 @@
         <ul class="row">
           <li class="col s1 center">
           </li>
-          <li class="col s6 offset-s1" id="searchbar" ng-controller="submitSearchController">
+          <li class="col s6 offset-s1" id="searchbar" ng-controller="submitShowController">
             <div class="input-field">
               <form ng-submit="tvShowCard()">
                 <input placeholder="TV show" id="autocomplete-input" class="autocomplete s12" type="search" autocomplete="off" ng-model="tvShowName" required>
