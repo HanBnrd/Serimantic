@@ -4,7 +4,7 @@
       <div class="row center">
         <div class="col l4 container">
           <div class="center">
-            <h5 class="header">Choose one or several keywords</h5>
+            <h5 class="header">Choose your tags</h5>
           </div>
           <div ng-repeat="lineKeys in frequentKeywords">
             <div ng-repeat="keyword in lineKeys">
@@ -27,7 +27,7 @@
             <div ng-repeat="lineRes in tvShowsResults">
               <div ng-repeat="res in lineRes">
                 <div class="col l6">
-                  <a ui-sref="tvshowcard({tv_show_name:res['name'], tmdb_id:res['tmdb_id']})" class="btn grey lighten-4 black-text">{{res.name}}</a>   
+                  <a ui-sref="tvshowcard({tv_show_name:res['name'], tmdb_id:res['tmdb_id']})" class="btn grey lighten-4 black-text">{{res.name}}</a>
                 </div>
               </div>
               <br><br>
