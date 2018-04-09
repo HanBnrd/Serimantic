@@ -46,7 +46,7 @@ mysql -u root -p
 
 CREATE DATABASE serimantic;
 
-GRANT ALL PRIVILEGES on serimantic.* to ‘user’@’localhost’ IDENTIFIED BY ‘user’;
+GRANT ALL PRIVILEGES on serimantic.* to ‘user’@’localhost’ IDENTIFIED BY ‘password’;
 
 exit
 
