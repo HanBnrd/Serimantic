@@ -84,7 +84,7 @@ Use of [tmdbsimple](https://github.com/celiao/tmdbsimple) v1.7.0, modified to ge
 
 
 #### Configuration de l'API key  
-Lancer keyConfig.py avec Python3 et saisir la clé
+Lancer keyConfig.py avec Python 3 et saisir la clé
 
 #### Extraction des mots clés des séries de base  
 Lancer defaultMain.py avec Python 3 (les mots clés sont enregistrés dans samples/saves/default.tal)  
@@ -96,7 +96,7 @@ Lancer addSerie.py avec Python 3 et suivre les intructions en console
 Les mots clés sont enregistrés dans samples/saves/default.tal  
 
 #### Recommandation de série  
-Lancer recommendation.py avec Python3 et suivre les instructions en console  
+Lancer recommendation.py avec Python 3 et suivre les instructions en console  
 Une série proche de celle indiquée sera recommandée et les mots clés en communs affichés  
 
 
