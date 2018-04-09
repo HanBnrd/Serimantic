@@ -1,0 +1,48 @@
+    <div class="container grey lighten-4" ng-controller="recommendationController">
+      <br><br>
+      <h1 class="header center teal-text text-accent-4">Recommendations</h1>
+      <div class="row center">
+        <div class="col l4 container">
+          <div class="center">
+            <h5 class="header">
+              <div class="row">
+                <div class="col l10">
+                  Choose one or several keywords
+                </div>
+                <div class="col l2">
+                  <a class="btn-floating grey lighten-4" ng-click="refreshKeywords()">
+                    <i class="material-icons  teal-text text-lighten-2">refresh</i>
+                  </a>
+                </div>
+              </div>
+            </h5>
+          </div>
+          <div ng-repeat="lineKeys in randomKeywords">
+            <div ng-repeat="keyword in lineKeys">
+              <div class="col l6">
+                <div class="switch">
+                  <label class="black-text">
+                    <input type="checkbox" ng-model="keyword.checked" ng-change="updateResults(keyword)">
+                    <span class="left">{{keyword.keyword}}</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+          </div>
+        </div>
+        <div class="col l8">
+          <div class="center">
+            <h5 class="header">Results</h5>
+            <div ng-repeat="lineRes in tvShowsResults">
+              <div ng-repeat="res in lineRes">
+                <div class="col l6">
+                  <a ui-sref="tvshowcard({tv_show_name:res['name'], tmdb_id:res['tmdb_id']})" class="btn grey lighten-4 black-text">{{res.name}}</a>   
+                </div>
+              </div>
+              <br><br>
+          </div>
+        </div>
+      </div>
+    </div>
