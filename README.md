@@ -3,7 +3,7 @@
 **Title:** Serimantic  
 **Keywords:** NLP, recommendation, TV series  
 **Version:** 2.0.0  
-**Date:** dec 2017  
+**Date:** april 2018  
 **Authors:** Johann Benerradi, Rachel Confiant-Duté, Justinien Ghorra, Laurine Jeannot, Quentin Pouvreau  
 **Web site:** [UFR Mathématiques et Informatique](http://mathinfo.univ-lorraine.fr)  
 **Platform:** Python 3, Django  
