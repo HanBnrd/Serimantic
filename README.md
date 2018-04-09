@@ -9,17 +9,9 @@
 **Platform:** Python 3, Django  
 **License:** GNU GPL 3.0  
 
-Use of [tmdbsimple](https://github.com/celiao/tmdbsimple) v1.7.0, modified to get keywords of TV series (stored in src/lib)
-
 
 **Description:**  
 TV series recommendation based on keyword extraction through semantic analysis of overviews  
-
-
-**Requires:**  
-  - [Python 3.x](https://www.python.org/download/releases/3.0/)  
-  - [NLTK 3.2.5](http://www.nltk.org)  
-  - [TMDB API key](https://www.themoviedb.org/documentation/api)  
 
 
 ## Web part
@@ -81,7 +73,16 @@ python3 manage.py runserver
 ### You're good to go !
 
 
-## The NLP engine
+## The NLP engine  
+Use of [tmdbsimple](https://github.com/celiao/tmdbsimple) v1.7.0, modified to get keywords of TV series (stored in src/lib)  
+
+
+**Requires:**  
+  - [Python 3.x](https://www.python.org/download/releases/3.0/)  
+  - [NLTK 3.2.5](http://www.nltk.org)  
+  - [TMDB API key](https://www.themoviedb.org/documentation/api)  
+
+
 #### Configuration de l'API key  
 Lancer keyConfig.py avec Python3 et saisir la clé
 
