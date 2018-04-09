@@ -20,6 +20,8 @@ TV series recommendation based on keyword extraction through semantic analysis o
 ```bash
 sudo apt install python-pip
 
+sudo apt install python3-django
+
 pip install django
 
 pip install djangorestframework
