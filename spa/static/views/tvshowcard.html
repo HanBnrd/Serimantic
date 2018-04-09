@@ -8,7 +8,7 @@
             <div class="row">
               <h1 id="seriestitle" class="col s12">{{tvShowData["name"]}}</h1>
               <h5>
-                Genres :
+                Genre :
                 <span class="chip" ng-repeat="genre in tvShowData['genres']">{{genre["name"]}} &nbsp;</span>
               </h5>
               <h6>{{tvShowData["overview"]}}</h6>
@@ -35,9 +35,9 @@
           </table>
         </div>
       </div>
-    </div> 
+    </div>
   <script>
-    $(document).ready(function(){  
-      $('.materialboxed').materialbox();  
+    $(document).ready(function(){
+      $('.materialboxed').materialbox();
     });
-  </script> 
+  </script>
