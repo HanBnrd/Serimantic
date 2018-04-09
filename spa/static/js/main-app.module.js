@@ -61,7 +61,6 @@ app.controller('tvShowCardController', function($scope, $http, $stateParams) {
 
     $http.get('tmdb/'+$stateParams.tmdb_id+'/').then(function(response) {
         $scope.tvShowData = response.data;
-        console.log($scope.tvShowData);
     });
 
     $http.get('api/keyword/name/'+$stateParams.tv_show_name+'/').then(function(response) {
