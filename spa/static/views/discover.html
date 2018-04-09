@@ -9,7 +9,7 @@
             <h5 class="header">
               <div class="row">
                 <div class="col m10">
-                  Choose one or several keywords
+                  Choose your tags
                 </div>
                 <div class="col m2">
                   <a class="btn-floating grey lighten-4" ng-click="refreshKeywords()">
@@ -40,7 +40,7 @@
             <div ng-repeat="lineRes in tvShowsResults">
               <div ng-repeat="res in lineRes">
                 <div class="col l6">
-                  <a ui-sref="tvshowcard({tv_show_name:res['name'], tmdb_id:res['tmdb_id']})" class="btn grey lighten-4 black-text">{{res.name}}</a>   
+                  <a ui-sref="tvshowcard({tv_show_name:res['name'], tmdb_id:res['tmdb_id']})" class="btn grey lighten-4 black-text">{{res.name}}</a>
                 </div>
               </div>
               <br><br>

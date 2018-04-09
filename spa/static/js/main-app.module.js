@@ -17,10 +17,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     */
 
     $stateProvider
-        .state('tvshows', {
-            url: '/tvshows',
+        .state('trending', {
+            url: '/trending',
             controller: 'recommendationController',
-            templateUrl: 'static/views/tvshows.html'
+            templateUrl: 'static/views/trending.html'
         })
         .state('discover', {
             url: '/discover',
@@ -42,7 +42,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.controller('allNames', function($scope, $http) {
     $http.get('/api/tv/all/').then(function(response) {
         var tvShowNames = {};
-        for(var i = 0; i < response.data.length; i++) {    
+        for(var i = 0; i < response.data.length; i++) {
             tvShowNames[response.data[i].name] = null;
         }
 
@@ -112,6 +112,8 @@ app.controller('recommendationController', function($http, $scope) {
 
     $scope.refreshKeywords = function () {
         $http.get('api/keyword/discover/10/').then(function(response) {
+            filters = [];
+            $scope.tvShowsResults = null;
             $scope.randomKeywords = chunk(response.data, 2);
         });
     };
