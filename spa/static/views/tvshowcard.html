@@ -1,23 +1,23 @@
     <div id="containerShowCard" class="container center grey lighten-4">
-      <div class="row valign-wrapper center-align">
-          <img class="col s3 materialboxed" src="https://image.tmdb.org/t/p/w500{{ tvShowData['poster_path'] }}"/>
-
+      <div class="row valign-wrapper center-align" image-zoom>
+        <div class="col s3">
+          <img class="col s12 materialboxed" ng-src="https://image.tmdb.org/t/p/original{{ tvShowData['poster_path'] }}"/>
+        </div>
         <div class="col s6">
           <div class="row">
             <h1 id="seriestitle">{{tvShowData["name"]}}</h1>
+            <h5>
+              Genres :
+              <span class="chip" ng-repeat="genre in tvShowData['genres']">{{genre["name"]}} &nbsp;</span>
+            </h5>
             <h6>{{tvShowData["overview"]}}</h6>
           </div>
           <div class="row">
-            <h5>You may also like <a ui-sref="tvshowcard({tv_show_name:recommendedShow['name'], tmdb_id:recommendedShow['tmdb_id']})">{{recommendedShow["name"]}}</a></h5>
+            <h5>You may also like : <a ui-sref="tvshowcard({tv_show_name:recommendedShow['name'], tmdb_id:recommendedShow['tmdb_id']})">{{recommendedShow["name"]}}</a></h5>
           </div>
         </div>
 
         <div class="col s3">
-          <h5>Genre</h5>
-          <ul>
-            <li ng-repeat="genre in tvShowData['genres']">{{genre["name"]}}</li>
-          </ul>
-          <br>
           <h5>Keywords</h5>
           <table>
             <tr ng-repeat="rowkey in keywords">
@@ -25,4 +25,9 @@
             </tr>
           </table>
         </div>
-    </div>
+    </div> 
+  <script>
+    $(document).ready(function(){  
+      $('.materialboxed').materialbox();  
+    });
+  </script> 

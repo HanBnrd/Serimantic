@@ -54,7 +54,7 @@ input[type=search] {
   	height: 100%;
   	opacity:0.3;
 	background-position: center;
-	background-image: url('100.jpg');
+	background-image: url('../img/100.jpg');
     -ms-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
@@ -64,4 +64,14 @@ input[type=search] {
 
 .no-uppercase {
      text-transform: none;
+}
+
+#logo-container {
+    display: inline-block;
+    height: 100%;
+    font-size: 0rem;
+}
+
+#logo-container>img {
+    vertical-align: middle;
 }

@@ -1,14 +1,16 @@
     <div class="container grey lighten-4" ng-controller="recommendationController">
       <br><br>
-      <h1 class="header center teal-text text-accent-4">Recommendations</h1>
+      <div class="row">
+        <h1 class="col s12 center teal-text text-accent-4">TV Shows</h1>
+      </div>
       <div class="row center">
-        <div class="col l4 container">
+        <div class="col s12 m4 container">
           <div class="center">
             <h5 class="header">Choose one or several keywords</h5>
           </div>
           <div ng-repeat="lineKeys in frequentKeywords">
             <div ng-repeat="keyword in lineKeys">
-              <div class="col l6">
+              <div class="col s6 m6">
                 <div class="switch">
                   <label class="black-text">
                     <input type="checkbox" ng-model="keyword.checked" ng-change="updateResults(keyword)">
@@ -21,7 +23,7 @@
             <br>
           </div>
         </div>
-        <div class="col l8">
+        <div class="col s12 m8">
           <div class="center">
             <h5 class="header">Results</h5>
             <div ng-repeat="lineRes in tvShowsResults">
