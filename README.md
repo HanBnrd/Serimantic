@@ -18,7 +18,7 @@ TV series recommendation based on keyword extraction through semantic analysis o
 ### Installation
 #### 1) Install Django and Django Rest Framework with pip
 ```bash
-sudo apt install python-pip
+sudo apt install python3-pip
 
 sudo apt install python3-django
 
