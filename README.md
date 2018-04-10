@@ -53,7 +53,7 @@ GRANT ALL PRIVILEGES on serimantic.* to ‘user’@’localhost’ IDENTIFIED BY
 exit
 
 ```
-#### 4) Put your own settings.py file into Serimantic/ folder (a template will be located in the project)
+#### 4) Fill in the SECRET_KEY in Serimantic/settings.py
 
 #### 5) Make database migration
 ```bash
