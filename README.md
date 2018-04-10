@@ -18,7 +18,7 @@ TV series recommendation based on keyword extraction through semantic analysis o
 ### Installation
 #### 1) Install Django and Django Rest Framework with pip
 ```bash
-sudo apt install python-pip
+sudo apt install python3-pip
 
 sudo apt install python3-django
 
@@ -53,7 +53,7 @@ GRANT ALL PRIVILEGES on serimantic.* to ‘user’@’localhost’ IDENTIFIED BY
 exit
 
 ```
-#### 4) Put your own settings.py file into Serimantic/ folder (a template will be located in the project)
+#### 4) Fill in the SECRET_KEY in Serimantic/settings.py
 
 #### 5) Make database migration
 ```bash
