@@ -37,6 +37,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         	templateUrl: 'static/views/home.html'
         });
 
+        $urlRouterProvider.otherwise('default');
 });
 
 app.controller('allNames', function($scope, $http) {
