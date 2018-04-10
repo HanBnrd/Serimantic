@@ -17,7 +17,7 @@ search.tv(query=seriesName)
 if (len(search.results) > 0):
     s = search.results[0] # take the first result
     TVShowName = s['original_name']
-    default = open('../samples/saves/default.tal','r',encoding='utf8')
+    default = open('../data/default.tal','r',encoding='utf8')
     TVShowList = getList(default)
     correctName = input('La série est-elle "'+ TVShowName + '" ? (y | n)\n')
     if (correctName == "y") :
@@ -26,6 +26,6 @@ if (len(search.results) > 0):
         else:
             print("Ajout de la série, veuillez patienter...")
             addInList(s)
-            tvlist = open('../samples/tvlist.txt','a',encoding='utf8')
+            tvlist = open('../data/tvlist.txt','a',encoding='utf8')
             tvlist.write(TVShowName+"\n")
             print("Série ajoutée !")

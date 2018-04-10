@@ -1,0 +1,43 @@
+    <div id="containerShowCard" class="container center grey lighten-4">
+      <div class="row" image-zoom>
+        <div class="valign-wrapper center-align">
+          <div class="col s5 l3 xl3">
+            <img class="col s12 materialboxed" ng-src="https://image.tmdb.org/t/p/original{{ tvShowData['poster_path'] }}"/>
+          </div>
+          <div class="col s7 l5 xl6">
+            <div class="row">
+              <h1 id="seriestitle" class="col s12">{{tvShowData["name"]}}</h1>
+              <h5>
+                Genre :
+                <span class="chip" ng-repeat="genre in tvShowData['genres']">{{genre["name"]}} &nbsp;</span>
+              </h5>
+              <h6>{{tvShowData["overview"]}}</h6>
+            </div>
+            <div class="row">
+              <h5>You may also like : <a ui-sref="tvshowcard({tv_show_name:recommendedShow['name'], tmdb_id:recommendedShow['tmdb_id']})">{{recommendedShow["name"]}}</a></h5>
+            </div>
+          </div>
+          <div class="show-on-large hide-on-med-and-down col l4 xl3">
+            <h5>Keywords</h5>
+            <table>
+              <tr ng-repeat="rowkey in keywords">
+                <td class="center" ng-repeat="key in rowkey">{{key}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="hide-on-large-only show-on-med-and-down col s12">
+          <h5>Keywords</h5>
+          <table>
+            <tr ng-repeat="rowkey in keywords">
+              <td class="center" ng-repeat="key in rowkey">{{key}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  <script>
+    $(document).ready(function(){
+      $('.materialboxed').materialbox();
+    });
+  </script>

@@ -1,0 +1,147 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Serimantic</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="shortcut icon" href="/static/img/logo.ico" />
+</head>
+
+<body ng-app="mainApp">
+  {% verbatim %}
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--                                                   -->
+  <!--                      Navbar                       -->
+  <!--                                                   -->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <nav class="black" role="navigation">
+
+    <div class="nav-wrapper row">
+      <!-- Left buttons-->
+      <div class="hide-on-med-and-down col l5 xl4 offset-xl1">
+        <ul>
+          <li><a ui-sref="trending" class="btn black waves-effect waves-light">Trending</a></li>
+          <li><a ui-sref="discover" class="btn black waves-effect waves-light">Discover</a></li>
+        </ul>
+      </div>
+
+      <!-- Center logo-->
+      <div class="col xl2 l2">
+        <a id="logo-container" href="/" class="no-uppercase brand-logo black center teal-text text-lighten-2"><img src="/static/img/logo.png" height="55px" alt="Serimantic"/></a>
+      </div>
+
+      <!-- Right buttons and search bar -->
+      <div class="hide-on-med-and-down col l4 xl4 offset-xl1 right" ng-controller="allNames">
+        <ul class="row">
+          <li class="col s1 center">
+          </li>
+          <li class="col s6 offset-s1" id="searchbar" ng-controller="submitShowController">
+            <div class="input-field">
+              <form ng-submit="tvShowCard()">
+                <input placeholder="TV show" id="autocomplete-input" class="autocomplete s12" type="search" autocomplete="off" ng-model="tvShowName">
+                <i ng-click="tvShowCard()" class="teal-text text-lighten-2 material-icons prefix">search</i>
+                <input type="submit" class="hide">
+              </form>
+            </div>
+          </li>
+          <li class="col s2 center">
+            <a href="admin/" class="btn black waves-effect waves-light">
+              <i class="material-icons white-text text-lighten-2">account_circle</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <ul id="nav-mobile" class="sidenav black">
+        <li>
+          <div class="row">
+            <div class="col s4 center">
+              <a href="" data-target="nav-mobile" class="sidenav-close btn black"><i class="material-icons">menu</i></a>
+            </div>
+            <div class="col s4">
+              <a ui-sref="" class="black center teal-text text-lighten-2">Menu</a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="btn black waves-effect waves-light">
+                <i class="material-icons white-text text-lighten-2">account_circle</i>
+              </a>
+            </div>
+        </li>
+        <li id="searchbar" ng-controller="submitShowController">
+          <div class="input-field">
+            <form ng-submit="tvShowCard()">
+              <input placeholder="TV show" id="autocomplete-input" class="autocomplete s12" type="search" autocomplete="off" ng-model="tvShowName">
+              <i ng-click="tvShowCard()" class="teal-text text-lighten-2 material-icons prefix">search</i>
+              <input type="submit" class="hide">
+            </form>
+          </div>
+        </li>
+        <li><a ui-sref="trending" class="btn black waves-effect waves-light">Trending</a></li>
+        <li><a ui-sref="discover" class="btn black waves-effect waves-light">Discover</a></li>
+      </ul>
+      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="background-image"></div>
+  <div ui-view class="section no-pad-bot" id="content">
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--                                                                            -->
+    <!--                              Main container                                -->
+    <!--                                                                            -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  </div>
+
+  <footer class="page-footer teal darken-3" id="mainFooter">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About us</h5>
+          <ul>
+            <li><a class="white-text">We are a group of people studying</a></li>
+            <li><a class="white-text">cognitive sciences in Nancy, France.</a></li>
+          </ul>
+
+
+        </div>
+        <div class="col l3 s6">
+          <h5 class="white-text">Contact</h5>
+          <ul>
+            <li><a class="white-text" href="http://www.univ-lorraine.fr/">Université de Lorraine</a></li>
+            <li><a class="white-text" href="https://mathinfo.univ-lorraine.fr/">UFR Mathématiques et Informatique</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s6">
+          <h5 class="white-text">Source code</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/HanBnrd/Serimantic">GitHub</a></li>
+            <li><a class="white-text" href="https://www.djangoproject.com/">Powered by Django</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container center">
+      <ul>
+        <li>Johann Benerradi, Rachel Confiant-Duté, Justinien Ghorra, Laurine Jeannot, Quentin Pouvreau</li>
+        <li>Copyright (c) 2014 <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/static/js/materialize.min.js"></script>
+  <script src="/static/js/init.js"></script>
+  <script type="text/javascript" src="/static/bower_components/angular/angular.min.js" ></script>
+  <script type="text/javascript" src="/static/bower_components/angular-ui-router/release/angular-ui-router.js" ></script>
+  <script type="text/javascript" src="/static/bower_components/angular-animate/angular-animate.min.js" ></script>
+
+  <script type="text/javascript" src="/static/js/main-app.module.js" ></script>
+
+  {% endverbatim %}
+  </body>
+</html>

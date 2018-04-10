@@ -29,7 +29,7 @@ def makeLexicalField(word, words_field, words_count, stopWords):
                             words_field[key].append(rel.name())
 
 def selectKeywords(motsSerie, motsSaisons, motsEpisodes):
-    with open("../samples/stopWords.txt", "r+", encoding="utf8") as stopWordsFile:
+    with open("../data/stopWords.txt", "r+", encoding="utf8") as stopWordsFile:
         stopWords = []
         for word in stopWordsFile.read().splitlines():
             stopWords.append(word)
@@ -59,11 +59,11 @@ def selectKeywords(motsSerie, motsSaisons, motsEpisodes):
     return finalWords
 
 def selectVerifiedKeywords(motsSerie, motsSaisons, motsEpisodes):
-    with open("../samples/acceptedWords.txt", "r+", encoding="utf8") as acceptedWordsFile:
+    with open("../data/acceptedWords.txt", "r+", encoding="utf8") as acceptedWordsFile:
         acceptedWords = []
         for word in acceptedWordsFile.read().splitlines():
             acceptedWords.append(word)
-        with open("../samples/stopWords.txt", "r+", encoding="utf8") as stopWordsFile:
+        with open("../data/stopWords.txt", "r+", encoding="utf8") as stopWordsFile:
             stopWords = []
             for word in stopWordsFile.read().splitlines():
                 stopWords.append(word)

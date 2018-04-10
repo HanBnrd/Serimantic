@@ -1,0 +1,77 @@
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+#mainFooter {
+	flex: 1 0 auto;
+}
+
+/* Checkboxes color */
+.switch label input[type=checkbox]:checked + .lever {
+  background-color: mediumaquamarine;
+}
+
+.switch label input[type=checkbox]:checked + .lever:after {
+  background-color: teal;
+}
+
+#searchbar {
+	margin:0%;
+}
+
+#autocomplete-input {
+	padding-left: 1rem;
+	width:100%;
+}
+
+input[type=search] {
+	color:lightseagreen;
+	height: 64px !important; /* or height of nav */
+
+}
+
+/* Text color for the placeholder in the searchbar */
+#autocomplete-input::placeholder {
+	color: lightseagreen;
+}
+
+#autocomplete-input::-moz-placeholder {
+	color: turquoise;  
+}
+ 
+#autocomplete-input:-ms-input-placeholder {  
+	color: lightseagreen;  
+}
+
+.background-image {
+	filter: grayscale(50%);
+	z-index: -1;
+	position: fixed;
+  	z-index: -1;   
+  	width: 100%;
+  	height: 100%;
+  	opacity:0.3;
+	background-position: center;
+	background-image: url('../img/100.jpg');
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.no-uppercase {
+     text-transform: none;
+}
+
+#logo-container {
+    display: inline-block;
+    height: 100%;
+    font-size: 0rem;
+}
+
+#logo-container>img {
+    vertical-align: middle;
+}
