@@ -1,7 +1,5 @@
 ### Template for your project
-### "# TODO" needs to be replaced by your own settings 
-
-
+### "# TODO" needs to be replaced by your own settings
 
 """
 Django settings for Serimantic project.
@@ -84,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'serimantic',
-        'USER': 'user'
+        'USER': 'user',
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '3306',

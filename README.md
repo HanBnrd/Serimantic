@@ -2,7 +2,7 @@
 
 **Title:** Serimantic  
 **Keywords:** NLP, recommendation, TV series  
-**Version:** 2.0.0  
+**Version:** 2.0.1  
 **Date:** april 2018  
 **Authors:** Johann Benerradi, Rachel Confiant-Duté, Justinien Ghorra, Laurine Jeannot, Quentin Pouvreau  
 **Web site:** [UFR Mathématiques et Informatique](http://mathinfo.univ-lorraine.fr)  
@@ -37,7 +37,7 @@ sudo apt install mysql-server
 
 sudo apt install libmysqlclient-dev python-dev python-mysqldb
 
-sudo apt install python3-mysql.connector 
+sudo apt install python3-mysql.connector
 
 pip install mysqlclient
 
@@ -62,7 +62,7 @@ python3 manage.py migrate
 python3 manage.py loaddata data/fixtures/initData.json
 
 ```
-#### 6) [Optional] Create a superuser to access the database as admin in Django 
+#### 6) [Optional] Create a superuser to access the database as admin in Django
 ```bash
 python3 manage.py createsuperuser
 
