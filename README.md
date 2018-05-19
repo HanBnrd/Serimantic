@@ -24,7 +24,7 @@ TV series recommendation based on keyword extraction through semantic analysis o
 
 
 ### API key configuration
-Run *keyConfig.py* with Python 3 and type in the key  
+Run *src/keyConfig.py* with Python 3 and type in the key  
 
 
 ## Web interface
@@ -91,15 +91,15 @@ python3 manage.py runserver
 
 ## Command-line interface
 ### Keyword Extraction on the basic corpus
-Run *defaultMain.py* with Python 3 (keywords are stored in *samples/saves/default.tal*)  
-Modify *samples/tvlist.txt* to extract keywords on a different series basis  
+Run *src/defaultMain.py* with Python 3 (keywords are stored in *data/default.tal*)  
+Modify *data/tvlist.txt* to extract keywords on a different series basis  
 This process might have already been done  
 
 ### Adding a series to the corpus
-Run *addSeries.py* with Python 3 and folow the instructions (new keywords are stored in *samples/saves/default.tal*)  
+Run *src/addSeries.py* with Python 3 and folow the instructions (new keywords are stored in *data/default.tal*)  
 
 ### Series recommendation
-Run recommendation.py with Python 3 and folow the instructions  
+Run *src/recommendation.py* with Python 3 and folow the instructions  
 A series close to that indicated will be recommended and the common keywords will be displayed  
 
 
