@@ -11,14 +11,14 @@ Created by Justinien Ghorra and Johann Benerradi on June 2018.
 :license: GNU GPL 3.0, see LICENSE for more details
 """
 
-import lib.tmdbsimple as tmdb
+import tmdbsimple as tmdb
 
-class Series()
+class Series:
 
-    """
-    Get the list of series that have already been processed
-    """
     def getProcessedSeries(self, filereader):
+        """
+        Get the list of series that have already been processed
+        """
         seriesList = []
         for row in filereader:
             seriesList.append(row.split('|')[0])
@@ -26,12 +26,11 @@ class Series()
         return seriesList
 
 
-    """
-    Get overviews keywords from series, seasons and episodes
-    """
-    # TODO : mettre traitement dans un main
-
     def getKeywords(self, series):
+        """
+        Get overviews keywords from series, seasons and episodes
+        """
+        # TODO : mettre traitement dans un main
         numberOfSeasons = tmdb.TV(series['id']).info()['number_of_seasons']
         numberOfEpisodes = 0
         seasonsWords = []
