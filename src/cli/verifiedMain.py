@@ -4,7 +4,7 @@ Création du corpus à partir des mots clés des séries de la liste de base
 
 import lib.tmdbsimple as tmdb
 from lib.writer import writeDefaultFile
-from lib.overview import addInList
+from lib.overview import getKeywords
 
 APIkey = open('../api.key','r',encoding="utf8")
 key = APIkey.readline().split("\n")[0]
@@ -21,6 +21,6 @@ for line in fichier.readlines():
     if (len(search.results) > 0):
         s = search.results[0] # take the first result
         print(s['original_name'])
-        addInList(s, True)
+        getKeywords(s, True)
 
 fichier.close()

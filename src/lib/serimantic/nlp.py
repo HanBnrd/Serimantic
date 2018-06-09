@@ -3,7 +3,7 @@
 """
 serimantic.nlp
 ~~~~~~~~~~~~~~~~~
-This module implements the Filter functionality of serimantic.
+This module implements the NLP functionality of serimantic.
 
 Created by Justinien Ghorra and Johann Benerradi on June 2018.
 

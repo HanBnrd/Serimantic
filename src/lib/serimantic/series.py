@@ -1,49 +1,55 @@
-"""
-series
-"""
-"""
-Ce module permet d'obtenir la liste de séries déja analysées par des outils de TAL
-"""
-
-def getList(filereader):
-    TVShowList = []
-    for row in filereader:
-        TVShowList.append(row.split('|')[0])
-    filereader.seek(0)
-    return TVShowList
-
+# -*- coding: utf-8 -*-
 
 """
-overview
-"""
-"""
-Ce module permet d'obtenir les résumés des séries, saisons et épisodes et de les
-traiter avec les modules filter puis semantic
+serimantic.series
+~~~~~~~~~~~~~~~~~
+This module implements the series management functionalies of serimantic.
+
+Created by Justinien Ghorra and Johann Benerradi on June 2018.
+
+:copyright: (c) 2017-2018 by Justinien Ghorra and Johann Benerradi
+:license: GNU GPL 3.0, see LICENSE for more details
 """
 
 import lib.tmdbsimple as tmdb
-import lib.filter as fil
-import lib.semantic as sem
-from lib.writer import writeDefaultFile
 
-def addInList(series, verify=False):
-    seriesWords = fil.filter(series['overview']) # from the raw series synopsis to the filtered one
-    numberOfSeasons = tmdb.TV(series['id']).info()['number_of_seasons']
-    numberOfEpisodes = 0
-    seasonsWords = []
-    episodesWords = []
-    for seasonNumber in range(numberOfSeasons):
-        seasonOverview = tmdb.TV_Seasons(series['id'],seasonNumber+1).info()['overview']
-        seasonsWords.extend(fil.filter(seasonOverview)) # from the raw seasons synopsis to the filtered ones
+class Series()
 
-        episodesPerSeason = len(tmdb.TV_Seasons(series['id'],seasonNumber+1).info()['episodes'])
-        numberOfEpisodes = numberOfEpisodes + episodesPerSeason
-        for episodeNumber in range(episodesPerSeason):
-            episodeOverview = tmdb.TV_Episodes(series['id'],seasonNumber+1,episodeNumber+1).info()['overview']
-            episodesWords.extend(fil.filter(episodeOverview)) # from the raw episodes synopsis to the filtered ones
+    """
+    Get the list of series that have already been processed
+    """
+    def getProcessedSeries(self, filereader):
+        seriesList = []
+        for row in filereader:
+            seriesList.append(row.split('|')[0])
+        filereader.seek(0)
+        return seriesList
 
-    if verify:
-        keywords = sem.selectVerifiedKeywords(seriesWords, seasonsWords, episodesWords)
-    else:
-        keywords = sem.selectKeywords(seriesWords, seasonsWords, episodesWords)
-    writeDefaultFile(series['original_name'], keywords)
+
+    """
+    Get overviews keywords from series, seasons and episodes
+    """
+    # TODO : mettre traitement dans un main
+
+    def getKeywords(self, series):
+        numberOfSeasons = tmdb.TV(series['id']).info()['number_of_seasons']
+        numberOfEpisodes = 0
+        seasonsWords = []
+        episodesWords = []
+
+        # Series
+        seriesWords = series['overview']
+
+        # Seasons
+        for seasonNumber in range(numberOfSeasons):
+            seasonOverview = tmdb.TV_Seasons(series['id'],seasonNumber+1).info()['overview']
+            seasonsWords.extend(seasonOverview) # from the raw seasons synopsis to the filtered ones
+
+            # Episodes
+            episodesPerSeason = len(tmdb.TV_Seasons(series['id'],seasonNumber+1).info()['episodes'])
+            numberOfEpisodes = numberOfEpisodes + episodesPerSeason
+            for episodeNumber in range(episodesPerSeason):
+                episodeOverview = tmdb.TV_Episodes(series['id'],seasonNumber+1,episodeNumber+1).info()['overview']
+                episodesWords.extend(episodeOverview)
+
+        return seriesWords, seasonsWords, episodesWords

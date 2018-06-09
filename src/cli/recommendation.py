@@ -2,14 +2,14 @@
 Recommandation d'une série à partir d'une autre
 """
 
-from lib.series import getList
+from lib.series import getProcessedSeries
 
 print('****************************')
 print('| Recommandation de séries |')
 print('****************************')
 print('Liste de séries disponibles : ')
 default = open('../data/default.tal','r',encoding='utf8')
-TVShowList = getList(default) # Obtention de la liste de séries importées
+TVShowList = getProcessedSeries(default) # Obtention de la liste de séries importées
 print(TVShowList)
 print('')
 TVShowInput = input('Choisissez une série que vous avez aimé : ')

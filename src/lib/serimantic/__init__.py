@@ -17,3 +17,7 @@ __version__ = '0.1'
 __author__ = 'Justinien Ghorra and Johann Benerradi'
 __copyright__ = 'Copyright (c) 2017-2018 Justinien Ghorra and Johann Benerradi'
 __license__ = 'GNU GPL 3.0'
+
+from .nlp import *
+from .series import *
+from .writer import *
