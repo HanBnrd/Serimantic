@@ -106,7 +106,7 @@ A series close to that indicated will be recommended and the common keywords wil
 
 
 
-# Template
+## Template
 ### *settings.py*
 ```python
 """
