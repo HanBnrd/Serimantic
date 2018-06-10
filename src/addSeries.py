@@ -1,31 +1,52 @@
 """
-Ajout des mots clés d'une série dans le corpus
+Add series keywords to data
 """
 
 import lib.tmdbsimple as tmdb
-from lib.series import getProcessedSeries
-from lib.overview import getKeywords
+import lib as sc # serimantic package
 
-APIkey = open('../api.key','r',encoding="utf8")
-key = APIkey.readline().split("\n")[0]
-APIkey.close()
-tmdb.API_KEY = key # database key
-search = tmdb.Search() # searching instantiation
+def main():
+    APIkey = open('../api.key','r',encoding="utf8")
+    key = APIkey.readline().split("\n")[0]
+    APIkey.close()
+    tmdb.API_KEY = key # database key
+    search = tmdb.Search() # searching instantiation
 
-seriesName = input("Entrez un nom de série :\n")
-search.tv(query=seriesName)
-if (len(search.results) > 0):
-    s = search.results[0] # take the first result
-    TVShowName = s['original_name']
-    default = open('../data/default.tal','r',encoding='utf8')
-    TVShowList = getProcessedSeries(default)
-    correctName = input('La série est-elle "'+ TVShowName + '" ? (y | n)\n')
-    if (correctName == "y") :
-        if TVShowName in TVShowList:
-            print('Erreur : La série est déjà présente !')
+    seriesName = input("Series name :\n")
+    search.tv(query=seriesName)
+    if (len(search.results) > 0):
+        s = search.results[0] # take the first result
+        TVShowName = s['original_name']
+        default = open('../data/default.tal','r',encoding='utf8')
+        series = sc.Series()
+        TVShowList = series.getProcessedSeries(default)
+        default.close()
+        correctName = input('Do you mean '+ TVShowName + ' ? [y/n]\n')
+        if correctName is not 'y':
+            print("Canceled")
         else:
-            print("Ajout de la série, veuillez patienter...")
-            getKeywords(s)
-            tvlist = open('../data/tvlist.txt','a',encoding='utf8')
-            tvlist.write(TVShowName+"\n")
-            print("Série ajoutée !")
+            if TVShowName in TVShowList:
+                print('Error : Series already processed')
+            else:
+                supervised = input('Supervised processing ? [y/n]\n')
+                print("Processing, please wait...")
+                text = series.getOverviews(s)
+                nlp = sc.Processing()
+                words = nlp.filter(text)
+
+                # Unsupervised processing
+                if supervised is not 'y':
+                    keywords = nlp.selectKeywords(words)
+                    writer = sc.Writer()
+                    writer.writeSeriesKeywords(TVShowName, keywords)
+                    print("Done")
+
+                # Supervised processing
+                else:
+                    keywords = nlp.selectKeywords(words, supervised=True)
+                    writer = sc.Writer()
+                    writer.writeSeriesKeywords(TVShowName, keywords)
+                    print("Done")
+
+if __name__ == '__main__':
+    main()
