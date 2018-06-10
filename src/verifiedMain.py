@@ -1,18 +1,19 @@
 """
 Création du corpus à partir des mots clés des séries de la liste de base
 """
+# DEPRECATED : TODO
 
 import lib.tmdbsimple as tmdb
 from lib.writer import writeDefaultFile
 from lib.overview import getKeywords
 
-APIkey = open('../api.key','r',encoding="utf8")
-key = APIkey.readline().split("\n")[0]
+APIkey = open('../api.key','r',encoding='utf8')
+key = APIkey.readline().split('\n')[0]
 APIkey.close()
 tmdb.API_KEY = key # database key
 search = tmdb.Search() # searching instantiation
 
-fichier = open('../data/tvlist.txt','r',encoding="utf8")
+fichier = open('../data/defaultseries.txt','r',encoding='utf8')
 
 index = -1
 for line in fichier.readlines():
