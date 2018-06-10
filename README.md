@@ -91,12 +91,12 @@ python3 manage.py runserver
 
 ## Command-line interface
 ### Keyword Extraction on the basic corpus
-Run *src/defaultMain.py* with Python 3 (keywords are stored in *data/default.tal*)  
-Modify *data/tvlist.txt* to extract keywords on a different series basis  
+Run *src/defaultMain.py* with Python 3 (keywords are stored in *data/nlpdata.txt*)  
+Modify *data/defaultseries.txt* to extract keywords on a different series basis  
 This process might have already been done  
 
 ### Adding a series to the corpus
-Run *src/addSeries.py* with Python 3 and folow the instructions (new keywords are stored in *data/default.tal*)  
+Run *src/addSeries.py* with Python 3 and folow the instructions (new keywords are stored in *data/nlpdata.txt*)  
 
 ### Series recommendation
 Run *src/recommendation.py* with Python 3 and folow the instructions  

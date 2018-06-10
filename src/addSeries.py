@@ -17,10 +17,10 @@ def main():
     if (len(search.results) > 0):
         s = search.results[0] # take the first result
         TVShowName = s['original_name']
-        default = open('../data/default.tal','r',encoding='utf8')
+        nlpdata = open('../data/nlpdata.txt','r',encoding='utf8')
         series = sc.Series()
-        TVShowList = series.getProcessedSeries(default)
-        default.close()
+        TVShowList = series.getProcessedSeries(nlpdata)
+        nlpdata.close()
         correctName = input('Do you mean '+ TVShowName + ' ? [y/n]\n')
         if correctName is not 'y':
             print("Canceled")

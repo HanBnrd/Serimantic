@@ -15,14 +15,11 @@ class Writer():
 
     def writeSeriesKeywords(slef, seriesName, keywords):
         """
-        Write series name and keywords in files
+        Write series name and keywords in file
         """
-        default = open("../data/default.tal", "a", encoding="utf8")
-        line = seriesName + "|"
+        nlpdata = open('../data/nlpdata.txt', 'a', encoding='utf8')
+        line = seriesName + '|'
         for word in keywords:
-            line = line + word + ";"
-        default.write(line + "\n")
-        default.close()
-        tvlist = open('../data/tvlist.txt','a',encoding='utf8')
-        tvlist.write(seriesName + "\n")
-        tvlist.close()
+            line = line + word + ';'
+        nlpdata.write(line + '\n')
+        nlpdata.close()
