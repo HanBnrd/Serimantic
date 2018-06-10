@@ -1,52 +1,61 @@
 """
-Add series keywords to data
+Main script to add series keywords to data
 """
 
 import lib.tmdbsimple as tmdb
 import lib as sc # serimantic package
 
-def main():
-    APIkey = open('../api.key','r',encoding="utf8")
-    key = APIkey.readline().split("\n")[0]
-    APIkey.close()
-    tmdb.API_KEY = key # database key
-    search = tmdb.Search() # searching instantiation
 
+def process(searchResult, supervised):
+    print("Processing, please wait...")
+    nlp = sc.Processing()
+    text = nlp.getOverviews(searchResult)
+    words = nlp.filter(text)
+    keywords = nlp.selectKeywords(words, supervised=supervised)
+    return keywords
+
+
+def main():
+    # API key config
+    APIkey = open('../api.key','r',encoding='utf8')
+    tmdb.API_KEY = APIkey.readline().split('\n')[0]
+    APIkey.close()
+
+    # Input series name
     seriesName = input("Series name :\n")
+
+    # Search
+    search = tmdb.Search()
     search.tv(query=seriesName)
     if (len(search.results) > 0):
-        s = search.results[0] # take the first result
-        TVShowName = s['original_name']
-        nlpdata = open('../data/nlpdata.txt','r',encoding='utf8')
-        series = sc.Series()
-        TVShowList = series.getProcessedSeries(nlpdata)
-        nlpdata.close()
+        result = search.results[0] # take the first result
+
+        # Check name
+        TVShowName = result['original_name']
         correctName = input('Do you mean '+ TVShowName + ' ? [y/n]\n')
         if correctName is not 'y':
             print("Canceled")
         else:
+            # Check if not already processed
+            manage = sc.Manage()
+            TVShowList = manage.getProcessedSeries()
             if TVShowName in TVShowList:
                 print('Error : Series already processed')
             else:
-                supervised = input('Supervised processing ? [y/n]\n')
-                print("Processing, please wait...")
-                text = series.getOverviews(s)
-                nlp = sc.Processing()
-                words = nlp.filter(text)
-
-                # Unsupervised processing
-                if supervised is not 'y':
-                    keywords = nlp.selectKeywords(words)
-                    writer = sc.Writer()
-                    writer.writeSeriesKeywords(TVShowName, keywords)
-                    print("Done")
-
-                # Supervised processing
+                # Decide whether supervised or not
+                supervisedInput = input('Supervised processing ? [y/n]\n')
+                if supervisedInput is 'y':
+                    supervised = True
                 else:
-                    keywords = nlp.selectKeywords(words, supervised=True)
-                    writer = sc.Writer()
-                    writer.writeSeriesKeywords(TVShowName, keywords)
-                    print("Done")
+                    supervised = False
+
+                # Process
+                keywords = process(result, supervised)
+
+                # Write in file
+                manage.writeSeriesKeywords(TVShowName, keywords)
+                print("Done")
+
 
 if __name__ == '__main__':
     main()
