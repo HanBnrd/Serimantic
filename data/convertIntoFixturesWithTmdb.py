@@ -9,7 +9,7 @@ keywordsIndex = 1
 relation = '['
 relationIndex = 1
 
-fichier = open('data/default.tal','r',encoding="utf8")
+fichier = open('data/nlpdata.txt','r',encoding="utf8")
 
 keywordsVisited = []
 
