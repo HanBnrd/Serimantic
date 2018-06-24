@@ -97,6 +97,7 @@ Run *src/default.py* with Python 3 (keywords are stored in *data/nlpdata.txt*)
 Modify *data/defaultseries.txt* to extract keywords on a different series basis  
 This process might have already been done  
 
+
 ### Add a series to the corpus
 Run *src/add.py* with Python 3 and follow the instructions (new keywords are stored in *data/nlpdata.txt*)  
 
