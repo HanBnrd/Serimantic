@@ -3,12 +3,15 @@ API key configuration
 """
 
 def main():
-    print("API key configuration")
-    key = input("Key : ")
-    apikey = open("../api.key","w",encoding="utf8")
+    print('Serimantic : config.py')
+    print('**********************')
+
+    key = input('TMDB API key : ')
+    apikey = open('../api.key','w',encoding='utf8')
     apikey.write(key)
     apikey.close()
-    print("Done")
+    print('Done')
+
 
 if __name__ == '__main__':
     main()
