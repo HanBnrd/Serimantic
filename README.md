@@ -2,8 +2,8 @@
 
 **Title:** Serimantic  
 **Keywords:** NLP, recommendation, TV series  
-**Version:** 2.0.2  
-**Date:** April 2018  
+**Version:** 2.0.3  
+**Date:** June 2018  
 **Authors:** Johann Benerradi, Rachel Confiant-Duté, Justinien Ghorra, Laurine Jeannot, Quentin Pouvreau  
 **Web site:** [UFR Mathématiques et Informatique](http://mathinfo.univ-lorraine.fr)  
 **Platform:** Python 3, Django  
@@ -97,7 +97,7 @@ Run *src/default.py* with Python 3 (keywords are stored in *data/nlpdata.txt*)
 Modify *data/defaultseries.txt* to extract keywords on a different series basis  
 This process might have already been done  
 
-### Adding series to the corpus
+### Add a series to the corpus
 Run *src/add.py* with Python 3 and follow the instructions (new keywords are stored in *data/nlpdata.txt*)  
 
 
