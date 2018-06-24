@@ -1,41 +1,31 @@
 """
-Recommandation d'une série à partir d'une autre
+Main script to get a series recommendation
 """
 
-from lib.series import getList
+import lib as sc # serimantic package
 
-print('****************************')
-print('| Recommandation de séries |')
-print('****************************')
-print('Liste de séries disponibles : ')
-default = open('../data/default.tal','r',encoding='utf8')
-TVShowList = getList(default) # Obtention de la liste de séries importées
-print(TVShowList)
-print('')
-TVShowInput = input('Choisissez une série que vous avez aimé : ')
-if TVShowInput not in TVShowList:
-    print('Erreur : Série non disponible')
-else:
-    refList = []
-    testList = []
-    bestList = []
-    bestTVShow = ''
-    for row in default: # Récupération des mots clés de la série sélectionnée
-        if row.split('|')[0] == TVShowInput:
-            refList = row.split('|')[1].split(';')
-            refList = refList[:len(refList)-1]
-    default.seek(0)
-    bestInter = 0
-    for row in default: # Comparaison des mots clés de la série aux autres
-        if row.split('|')[0] != TVShowInput:
-            testList = row.split('|')[1].split(';')
-            testInter = len(set(refList).intersection(set(testList)))
-            if testInter > bestInter:
-                bestTVShow = row.split('|')[0]
-                bestList = testList
-                bestInter = testInter
-    interSet = set(refList).intersection(set(bestList))
-    print('')
-    print('Nous vous recommandons :')
-    print(bestTVShow)
-    print('Ressemblances : '+str(interSet))
+
+def main():
+    print('Serimantic : add.py')
+    print('*******************')
+
+    # Display processed series
+    manage = sc.Manage()
+    TVShowList = manage.getProcessedSeries()
+    print('Available series : ' + str(TVShowList))
+    print('*******************')
+
+    # Input series name
+    TVShowInput = input('You liked : ')
+    if TVShowInput not in TVShowList:
+        print('Series not processed yet')
+
+    else:
+        bestSeries = manage.recommendation(TVShowInput)
+        interSet = manage.intersection(TVShowInput, bestSeries)
+        print('You may also like : ' + bestSeries)
+        print('Common keywords : ' + str(interSet))
+
+
+if __name__ == '__main__':
+    main()

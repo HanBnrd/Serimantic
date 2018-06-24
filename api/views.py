@@ -5,7 +5,7 @@ from rest_framework import status
 from .models import *
 from .serializers import *
 from django.db.models import Count
-from src.processing import recommendation
+from src.web import recommendation
 
 
 """
