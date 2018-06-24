@@ -16,13 +16,16 @@ def process(searchResult, supervised):
 
 
 def main():
-    # API key config
+    print('Serimantic : add.py')
+    print('*******************')
+
+    # Set API key
     APIkey = open('../api.key','r',encoding='utf8')
     tmdb.API_KEY = APIkey.readline()
     APIkey.close()
 
     # Input series name
-    seriesName = input('Series name :\n')
+    seriesName = input('Series name : ')
 
     # Search
     search = tmdb.Search()
@@ -32,7 +35,7 @@ def main():
 
         # Check name
         TVShowName = result['original_name']
-        correctName = input('Do you mean '+ TVShowName + ' ? [y/n]\n')
+        correctName = input('Do you mean '+ TVShowName + ' ? [y/n] ')
         if correctName is not 'y':
             print('Canceled')
         else:
@@ -43,7 +46,7 @@ def main():
                 print(TVShowName + ' already processed')
             else:
                 # Decide whether supervised or not
-                supervisedInput = input('Supervised processing ? [y/n]\n')
+                supervisedInput = input('Supervised processing ? [y/n] ')
                 if supervisedInput is 'y':
                     supervised = True
                 else:

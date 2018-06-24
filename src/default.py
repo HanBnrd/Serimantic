@@ -16,13 +16,16 @@ def process(searchResult, supervised):
 
 
 def main():
-    # API key config
+    print('Serimantic : default.py')
+    print('***********************')
+
+    # Set API key
     APIkey = open('../api.key','r',encoding='utf8')
     tmdb.API_KEY = APIkey.readline()
     APIkey.close()
 
     # Decide whether supervised or not
-    supervisedInput = input('Supervised processing ? [y/n]\n')
+    supervisedInput = input('Supervised processing ? [y/n] ')
     if supervisedInput is 'y':
         supervised = True
     else:
@@ -50,6 +53,7 @@ def main():
     # Close the default series file
     defaultseries.close()
     print('Done')
+
 
 if __name__ == '__main__':
     main()
