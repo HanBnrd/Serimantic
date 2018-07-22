@@ -19,7 +19,7 @@ TV series recommendation based on keyword extraction through semantic analysis o
 
 **Requires:**  
   - [Python 3](https://www.python.org/downloads/)  
-  - [NLTK 3.2.5](http://www.nltk.org)  
+  - [NLTK](http://www.nltk.org)  
   - [TMDB API key](https://www.themoviedb.org/documentation/api)  
 
 
@@ -108,7 +108,7 @@ A series close to that indicated will be recommended and the common keywords wil
 
 
 
-## Template
+---
 ### *settings.py*
 ```python
 """
@@ -240,4 +240,4 @@ STATICFILES_DIRS = [
 ```
 
 
-*(c) Université de Lorraine - Nancy*
+*&copy; Université de Lorraine - Nancy*
