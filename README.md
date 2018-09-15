@@ -35,13 +35,13 @@ sudo apt install python3-pip
 
 sudo apt install python3-django
 
-pip install django
+sudo -H pip install django
 
-pip install djangorestframework
+sudo -H pip install djangorestframework
 
-pip install markdown   # Markdown support for the browsable API
+sudo -H pip install markdown   # Markdown support for the browsable API
 
-pip install django-filter
+sudo -H pip install django-filter
 ```
 
 #### 2) Install MySQL Server and the connector for Python
@@ -52,7 +52,7 @@ sudo apt install libmysqlclient-dev python-dev python-mysqldb
 
 sudo apt install python3-mysql.connector
 
-pip install mysqlclient
+sudo -H pip install mysqlclient
 ```
 
 #### 3) Create a user to access a new database *serimantic* in MySQL
@@ -63,7 +63,7 @@ Template:
 ```sql
 CREATE DATABASE serimantic;
 
-GRANT ALL PRIVILEGES on serimantic.* to ‘user’@’localhost’ IDENTIFIED BY ‘password’;
+GRANT ALL PRIVILEGES on serimantic.* to 'user'@'localhost' IDENTIFIED BY 'password';
 
 exit
 ```
