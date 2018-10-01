@@ -33,7 +33,6 @@ class Manage():
         """
         refList = []
         testList = []
-        bestList = []
         bestSeries = ''
         bestInter = 0
 
@@ -51,7 +50,6 @@ class Manage():
                 testInter = len(set(refList).intersection(set(testList)))
                 if testInter > bestInter:
                     bestSeries = row.split('|')[0]
-                    bestList = testList
                     bestInter = testInter
         self.filereader.seek(0)
 
