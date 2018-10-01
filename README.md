@@ -3,7 +3,7 @@
 **Title:** Serimantic  
 **Keywords:** NLP, recommendation, TV series  
 **Version:** 2.0.3  
-**Date:** June 2018  
+**Date:** September 2018  
 **Authors:** Johann Benerradi, Rachel Confiant-Duté, Justinien Ghorra, Laurine Jeannot, Quentin Pouvreau  
 **Web site:** [UFR Mathématiques et Informatique](http://mathinfo.univ-lorraine.fr)  
 **Platform:** Python 3, Django  
@@ -48,16 +48,20 @@ sudo -H pip install django-filter
 ```bash
 sudo apt install mysql-server
 
+sudo mysql_secure_installation
+
 sudo apt install libmysqlclient-dev python-dev python-mysqldb
 
 sudo apt install python3-mysql.connector
 
 sudo -H pip install mysqlclient
+
+sudo -H pip install pymysql
 ```
 
 #### 3) Create a user to access a new database *serimantic* in MySQL
 ```bash
-mysql -u root -p
+sudo mysql -u root -p
 ```
 Template:
 ```sql
@@ -75,10 +79,10 @@ exit
 ```bash
 python3 manage.py migrate
 
-python3 manage.py loaddata data/fixtures/initData.json
+python3 manage.py loaddata nlpdata
 ```
 
-#### 6) [Optional] Create a superuser to access the database as admin in Django
+#### 6) Create a superuser to access the database as admin in Django
 ```bash
 python3 manage.py createsuperuser
 ```
