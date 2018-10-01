@@ -72,7 +72,7 @@ GRANT ALL PRIVILEGES on serimantic.* to 'user'@'localhost' IDENTIFIED BY 'passwo
 exit
 ```
 
-#### 4) Put your own *settings.py* file in *./Serimantic/*
+#### 4) Add your own *settings.py* file in *./Serimantic/*
 *(See template below)*
 
 #### 5) Migrate the database
@@ -146,7 +146,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'data',
+    'rest_framework',
     'api.apps.ApiConfig',
+    'spa.apps.SpaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
